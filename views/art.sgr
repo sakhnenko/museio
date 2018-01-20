@@ -2,4 +2,4 @@ extends(src='layout.sgr')
   block(name='content')
     h1 {{item.title}}
     p <img src={{item.photo.fields.file.url}}>
-    p <audio controls><source src={{item.audio.fields.file.url}} type="audio/mpeg"></audio> 
+    p <audio id="player" controls src={{item.audio.fields.file.url}} type="audio/mp3"></audio> 
