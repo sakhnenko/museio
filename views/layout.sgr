@@ -10,11 +10,11 @@ html
     block(name='title')
       title Title of Your Site
 
-    link(rel='stylesheet' href='css/index.css')
+    link(rel='stylesheet' href='/css/index.css')
 
   body
     main(role='main' id='{{ pageId }}')
       block(name='content')
 
     block(name='javascript')
-      script(src='js/main.js' defer)
+      script(src='/js/main.js' defer)

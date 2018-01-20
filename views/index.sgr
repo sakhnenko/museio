@@ -1,9 +1,11 @@
 extends(src='layout.sgr')
   block(name='content')
-    h2 Citie
+    h2 Galleries
     ul
       each(loop='city of contentful.cities')
-        li {{city.fields.cityName}} 
+        li {{city.cityName}} 
           ul
             each(loop='museum of contentful.museums')
-              li {{museum.fields.name}}
+              if(condition="museum.city.fields.slug==city.slug")
+                li: a(href='/museum/{{museum.slug}}') {{museum.name}}
+              

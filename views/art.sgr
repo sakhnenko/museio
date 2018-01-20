@@ -1,0 +1,4 @@
+extends(src='layout.sgr')
+  block(name='content')
+    h1 {{item.title}}
+    p <img src={{item.photo.fields.file.url}}> 

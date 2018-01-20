@@ -5,12 +5,11 @@ const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const env = process.env.SPIKE_ENV
 const Contentful = require('spike-contentful')
-const standard = require('reshape-standard')
 
 const locals = {}
 
 module.exports = {
-  reshape: standard({ locals: () => locals }),
+  reshape: htmlStandards({ locals: () => locals }),
   
 }
 
@@ -39,15 +38,32 @@ module.exports = {
       contentTypes: [
         {
           name: 'cities',
-          id: 'city'
+          id: 'city',
+          transform: (city) => {
+            return city.fields
+          },
         },
         {
           name: 'museums',
-          id: 'museum'
+          id: 'museum',
+          transform: (museum) => {
+            return museum.fields
+          },
+          template: {
+            path: 'views/museum.sgr',
+            output: (museum) => { return `museum/${museum.slug}.html` }
+          }
         },
         {
           name: 'pieces',
-          id: 'piece'
+          id: 'piece',
+          transform: (piece) => {
+            return piece.fields
+          },
+          template: {
+            path: 'views/art.sgr',
+            output: (art) => { return `art/${art.slug}.html` }
+          }
         }
       ]
     })
