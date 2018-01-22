@@ -1,5 +1,9 @@
 extends(src='layout.sgr')
   block(name='content')
     h1 {{item.title}}
-    p <img src={{item.photo.fields.file.url}}>
-    p <audio id="player" controls src={{item.audio.fields.file.url}} type="audio/mp3"></audio> 
+    .pod
+        .thumbnail(style='background-image:url({{item.museum.fields.image.fields.file.url}})')
+        a(href=/museum/{{item.museum.fields.slug}}) {{item.museum.fields.name}}
+
+    p <div class=art_image style=background-image:url({{item.photo.fields.file.url}})></div>
+    p <audio id=player controls src={{item.audio.fields.file.url}} type=audio/mp3></audio> 

@@ -7,5 +7,7 @@ extends(src='layout.sgr')
           ul
             each(loop='museum of contentful.museums')
               if(condition="museum.city.fields.slug==city.slug")
-                li: a(href='/museum/{{museum.slug}}') {{museum.name}}
+                li: .pod
+                    .thumbnail(style='background-image:url({{museum.image.fields.file.url}})')
+                    a(href=/museum/{{museum.slug}}) {{museum.name}}
               

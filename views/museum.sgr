@@ -4,5 +4,7 @@ extends(src='layout.sgr')
         ul
             each(loop='piece of contentful.pieces')
               if(condition="piece.museum.fields.slug==item.slug")
-                li: a(href='/art/{{piece.slug}}') {{piece.title}}
+                li: .pod
+                    .thumbnail(style='background-image:url({{piece.photo.fields.file.url}})')
+                    a(href=/art/{{piece.slug}}) {{piece.title}}
               
