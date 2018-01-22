@@ -1,6 +1,7 @@
 extends(src='layout.sgr')
   block(name='content')
     h1 {{item.name}}
+    h3 Stories:
         ul
             each(loop='piece of contentful.pieces')
               if(condition="piece.museum.fields.slug==item.slug")

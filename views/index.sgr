@@ -1,6 +1,6 @@
 extends(src='layout.sgr')
   block(name='content')
-    h2 Galleries
+    h3 Galleries:
     ul
       each(loop='city of contentful.cities')
         li {{city.cityName}} 
