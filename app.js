@@ -3,7 +3,7 @@ const cssStandards = require('spike-css-standards')
 const jsStandards = require('spike-js-standards')
 const sugarml = require('sugarml')
 const sugarss = require('sugarss')
-const cssnesting = require('postcss-nesting')
+const lost = require('lost')
 const env = process.env.SPIKE_ENV
 const Contentful = require('spike-contentful')
 
@@ -28,7 +28,7 @@ module.exports = {
     parser: sugarss,
     minify: env === 'production',
     warnForDuplicates: env !== 'production',
-    plugins: [new cssnesting()]
+    appendPlugins: [lost()]
   }),
   babel: jsStandards(),
   plugins: [

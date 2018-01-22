@@ -11,26 +11,28 @@ audio
 .left
     float: left
 
-.story
-    width: 400px
-    
 .padding20
     padding: 20px
 
 hr 
-    border-top: 1px solid #ddd
+    border-top: 1px solid #eee
+    border-bottom: 0
+    margin-bottom: 20px
 
 label 
     font-weight: bold
     font-size: 13px
     display: block
     margin-bottom: 10px
+    margin-top: 10px
 
 .art_image
     width: 400px
     height: 400px
+    max-width: 100%
     background-size: cover
     border-radius: 5px
+    flex-basis: 400px
 
 .pod 
     border: 1px solid #f4f4f4
@@ -59,3 +61,28 @@ label
         float: left
         margin-right: 15px
         border-radius: 30px
+
+.row
+    lost-flex-container: row
+
+.quarter 
+    lost-column: 1/4  flex
+
+.half
+    lost-column: 1/2 flex
+
+.floatright
+    float: right
+
+@media screen and (max-width: 900px) 
+    .quarter
+        lost-column: 1/1 flex
+    .half
+        lost-column: 1/1 flex
+
+    .story
+        & .details
+            order: 1
+            margin-bottom: 30px
+        & .storyimage
+            order: 2
