@@ -13,7 +13,9 @@ html
     link(rel='stylesheet' href='/css/index.css')
 
   body
-    main(role='main' id='{{ pageId }}')
+    header
+      #logo: a(href=/) M
+    main(role='main' id='content')
       block(name='content')
 
     block(name='javascript')

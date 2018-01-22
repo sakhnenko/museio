@@ -9,8 +9,7 @@ const Contentful = require('spike-contentful')
 const locals = {}
 
 module.exports = {
-  reshape: htmlStandards({ locals: () => locals }),
-  
+  reshape: htmlStandards({ locals: () => locals })
 }
 
 const newLocal = 'data.json';
