@@ -4,6 +4,20 @@ extends(src='layout.sgr')
     .pod
         .thumbnail(style='background-image:url({{item.museum.fields.image.fields.file.url}})')
         a(href=/museum/{{item.museum.fields.slug}}) {{item.museum.fields.name}}
+    hr
+    .left.padding20
+        .art_image(style="background-image:url({{item.photo.fields.file.url}}")
 
-    p <div class=art_image style=background-image:url({{item.photo.fields.file.url}})></div>
-    p <audio id=player controls src={{item.audio.fields.file.url}} type=audio/mp3></audio> 
+    .left.padding20.story
+        label Listen
+        audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
+        br 
+        br
+        label Story
+        p {{item.story}}
+        if(condition="item.relatedArt!=underfined")
+            label Related Art
+            ul 
+                each(loop='art of item.relatedArt')
+                    li "{{art.fields.title}}" by {{art.fields.artist}}
+
