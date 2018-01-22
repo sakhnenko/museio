@@ -8,6 +8,7 @@
   },
   "bugs": "https://github.com/sakhnenko/museio/issues",
   "dependencies": {
+    "postcss-nesting": "^4.2.1",
     "reshape-standard": "^3.0.0",
     "spike": "^2.2.1",
     "spike-contentful": "^2.0.1",
