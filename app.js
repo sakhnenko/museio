@@ -42,6 +42,9 @@ module.exports = {
         {
           name: 'cities',
           id: 'city',
+          filters: {
+            order: 'fields.slug'
+          },
           transform: (city) => {
             return city.fields
           },
@@ -51,6 +54,9 @@ module.exports = {
           id: 'museum',
           transform: (museum) => {
             return museum.fields
+          },
+          filters: {
+            order: 'fields.slug'
           },
           template: {
             path: 'views/museum.sgr',
