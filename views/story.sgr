@@ -21,10 +21,10 @@ extends(src='layout.sgr')
 
         .half.details
             label Listen
-            //if(condition="item.audioEmbed==underfined")
+            if(condition="item.audioEmbed==underfined")
                 audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
-            //else
-            //    p {{item.audioEmbed}}
+            else
+                p {{item.audioEmbed}}
             
             label Story
             p {{item.story}}
