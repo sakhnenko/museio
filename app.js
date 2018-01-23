@@ -24,7 +24,8 @@ module.exports = {
   reshape: htmlStandards({
     parser: sugarml,
     locals: (ctx) => locals,
-    minify: env === 'production'
+    minify: env === 'production',
+    retext: []
   }),
   postcss: cssStandards({
     parser: sugarss,

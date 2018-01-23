@@ -3,12 +3,13 @@ extends(src='layout.sgr')
     h3 Galleries:
     ul
       each(loop='city of contentful.cities')
-        li {{city.cityName}} 
+        li: h4 {{city.cityName}} 
           ul
             each(loop='museum of contentful.museums')
               if(condition="museum.city.fields.slug==city.slug")
                 li: .pod
                   .thumbnail(style='background-image:url({{museum.image.fields.file.url}})')
                   a(href=/museum/{{museum.slug}}) {{museum.name}}
+
               
                   
