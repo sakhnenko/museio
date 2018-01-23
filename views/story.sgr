@@ -7,7 +7,7 @@ extends(src='layout.sgr')
                 span by
                 a(href={{item.storyLink}}) {{item.storyAuthor}} 
                 span.at at 
-                a(href={{item.storyLink}}, class='storylink') {{item.storyLink}}
+                a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
         .half
             .pod.floatright
                 .thumbnail(style='background-image:url({{item.museum.fields.image.fields.file.url}})')
