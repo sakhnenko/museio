@@ -4,6 +4,8 @@ const jsStandards = require('spike-js-standards')
 const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const lost = require('lost')
+const tipsy = require('postcss-tipsy')
+const animation = require('postcss-animation')
 const env = process.env.SPIKE_ENV
 const Contentful = require('spike-contentful')
 
@@ -28,7 +30,7 @@ module.exports = {
     parser: sugarss,
     minify: env === 'production',
     warnForDuplicates: env !== 'production',
-    appendPlugins: [lost()]
+    appendPlugins: [lost(), tipsy(), animation()]
   }),
   babel: jsStandards(),
   plugins: [
@@ -62,8 +64,15 @@ module.exports = {
             return piece.fields
           },
           template: {
-            path: 'views/art.sgr',
-            output: (art) => { return `art/${art.slug}.html` }
+            path: 'views/story.sgr',
+            output: (story) => { return `story/${story.slug}.html` }
+          }
+        },
+        {
+          name: 'art',
+          id: 'art',
+          transform: (art) => {
+            return art.fields
           }
         }
       ]

@@ -1,0 +1,37 @@
+extends(src='layout.sgr')
+  block(name='content')
+    section.row
+        .half
+            h1 {{item.title}}
+            p.byline
+                span by
+                a(href={{item.storyLink}}) {{item.storyAuthor}} 
+                span.at at 
+                a(href={{item.storyLink}}, class='storylink') {{item.storyLink}}
+        .half
+            .pod.floatright
+                .thumbnail(style='background-image:url({{item.museum.fields.image.fields.file.url}})')
+                a(href=/museum/{{item.museum.fields.slug}}) {{item.museum.fields.name}}
+    
+    hr
+
+    section.story.row
+        .quarter.storyimage
+            .art_image(style="background-image:url({{item.photo.fields.file.url}}")
+
+        .half.details
+            label Listen
+            if(condition="item.audioEmbed==underfined")
+                audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
+            else
+                p {{item.audioEmbed}}
+            
+            label Story
+            p {{item.story}}
+            
+            if(condition="item.relatedArt!=undefined")
+                label Related Art
+                    each(loop='art of item.relatedArt')
+                        if(condition="art.fields.photo!=undefined")
+                            .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}})', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
+        .quarter

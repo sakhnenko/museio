@@ -1,11 +1,12 @@
 extends(src='layout.sgr')
   block(name='content')
     h1 {{item.name}}
+
     h3 Stories:
         ul
             each(loop='piece of contentful.pieces')
               if(condition="piece.museum.fields.slug==item.slug")
                 li: .pod
                     .thumbnail(style='background-image:url({{piece.photo.fields.file.url}})')
-                    a(href=/art/{{piece.slug}}) {{piece.title}}
+                    a(href=/story/{{piece.slug}}) {{piece.title}}
               

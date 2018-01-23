@@ -9,15 +9,35 @@ body
   padding: 50px
   padding-top: 20px
 
+@keyframes Gradient
+  0%
+    background-position: 0% 50%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0% 50%
+
 header
-  background-color: #604c8d
+  background: linear-gradient(-45deg, #604c8d, #E73C7E, #604c8d, #23D5AB)
+  background-size:  400% 400%
+  animation: Gradient 22s ease infinite
+ 
 
   & #logo
-    padding: 10px
-    font-size: 20px
+    padding: 20px
+    font-size: 30px
     font-weight: bold
-    background: #BD5C73
     display: inline-block
+    color: #fff
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #0ff,
+      0 0 80px #0ff,
+      0 0 90px #0ff,
+      0 0 100px #0ff,
+      0 0 150px #0ff
 
     & a
       color: White
@@ -26,3 +46,5 @@ header
       &:hover
         text-decoration: underline
 
+.tipsy 
+  tipsy: n #34495e 5px 0

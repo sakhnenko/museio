@@ -8,8 +8,12 @@
   },
   "bugs": "https://github.com/sakhnenko/museio/issues",
   "dependencies": {
+    "ajv": "^6.0.1",
+    "ajv-keywords": "^3.0.0",
     "lost": "^8.2.0",
+    "postcss-animation": "0.0.12",
     "postcss-nesting": "^4.2.1",
+    "postcss-tipsy": "^1.0.0",
     "reshape-standard": "^3.0.0",
     "spike": "^2.2.1",
     "spike-contentful": "^2.0.1",
@@ -19,7 +23,8 @@
     "spike-page-id": "^1.0.0",
     "spike-records": "^2.2.0",
     "sugarml": "^0.6.0",
-    "sugarss": "^1.0.0"
+    "sugarss": "^1.0.0",
+    "wenk": "^1.0.6"
   },
   "devDependencies": {
     "ava": "^0.19.1",

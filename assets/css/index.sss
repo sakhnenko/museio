@@ -28,7 +28,7 @@ label
 
 .art_image
     width: 400px
-    height: 400px
+    height: 100%
     max-width: 100%
     background-size: cover
     border-radius: 5px
@@ -36,7 +36,7 @@ label
 
 .pod 
     border: 1px solid #f4f4f4
-    padding: 10px
+    padding: 3px
     border-radius: 30px
     box-shadow: 1px 1px 3px rgba(0,0,0,0.05)
     display: inline-block
@@ -45,7 +45,7 @@ label
 
     & a 
         position: relative
-        top: 7px
+        top: 16px
         margin-right: 10px
         text-decoration: none
         color: #666
@@ -55,12 +55,38 @@ label
             color: #444
 
     & .thumbnail 
-        width: 30px
-        height: 30px
+        width: 50px
+        height: 50px
         background-size: cover
         float: left
         margin-right: 15px
         border-radius: 30px
+
+.related_thumbnail 
+    width: 100px
+    height: 100px
+    background-size: cover
+    display: inline-block
+    margin-right: 15px
+    border-radius: 3px
+    cursor: help
+
+.byline
+    color: Black
+    & a 
+        color: #000
+        font-weight: bold
+    & .at 
+        color: #ccc
+    & .storylink
+        display: inline-block
+        font-weight: normal
+        color: #ccc
+        width: 300px
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+        vertical-align: top
 
 .row
     lost-flex-container: row
