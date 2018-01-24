@@ -1,7 +1,6 @@
 var  synth = window.speechSynthesis;
 var voices;
 
-
 function saySomething(){
     synth.cancel();
     var utterThis = new SpeechSynthesisUtterance(document.getElementById("readme").textContent);
@@ -22,12 +21,10 @@ function speakVoice() {
 };
 
 if (document.getElementById("readit")===null){
-    console.log('no ready')
+
 }else{
-    console.log("Hi")
     document.getElementById("readit").addEventListener("click",function(e){
-        
-        e.preventDefault
+        e.preventDefault()
         saySomething()
      },false)
 }
