@@ -95,32 +95,14 @@ section.masonry
         overflow: hidden
         vertical-align: top
 
-.row
-    lost-flex-container: row
+.details 
+    & .story
+        padding-left: 20px
+        font-size: 14px
+        color: #888
+        border-left: 2px solid #bbb
 
-.quarter 
-    lost-column: 1/4  flex
-
-.half
-    lost-column: 1/2 flex
-
-.floatright
-    float: right
-
-@media screen and (max-width: 900px) 
-    .quarter
-        lost-column: 1/1 flex
-    .half
-        lost-column: 1/1 flex
-
-    .story
-        & .details
-            order: 1
-            margin-bottom: 30px
-        & .storyimage
-            order: 2
-    
-    .pod
-        width: 100%
-
+    & .via 
+        color: #bbbbbb
+        font-size: 12px
     

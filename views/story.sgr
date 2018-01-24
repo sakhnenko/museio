@@ -27,8 +27,8 @@ extends(src='layout.sgr')
                 p {{item.audioEmbed}}
             
             label Story
-            p {{item.story}}
-            
+            p.story {{item.story}}
+            p.via: a(href={{item.storyLink}}) Via
             if(condition="item.relatedArt!=undefined")
                 label Related Art
                     each(loop='art of item.relatedArt')
