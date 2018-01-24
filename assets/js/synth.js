@@ -33,7 +33,7 @@ if (readButton===null){
     //     alert("Hi")
     //     //saySomething()
     // }
-
+    alert("hello") 
     document.getElementById("readit").addEventListener('touchstart', function(e){
         alert("hello") // alert pageX coordinate of touch point
     }, false)
