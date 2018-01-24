@@ -31,6 +31,7 @@ extends(src='layout.sgr')
             p.via
                 a(href={{item.storyLink}}) Via
                 button#readit(href='#') Read me a story
+
             if(condition="item.relatedArt!=undefined")
                 label Related Art
                     each(loop='art of item.relatedArt')
