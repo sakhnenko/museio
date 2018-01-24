@@ -30,7 +30,7 @@ if (readButton===null){
     function tapOrClick(e) {
         e.preventDefault()
         e.stopPropagation()
-        console.log("Click")
+        alert("Hi")
         //saySomething()
     }
 }
