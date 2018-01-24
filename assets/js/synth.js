@@ -24,11 +24,13 @@ var readButton = document.getElementById("readit");
 if (readButton===null){
 
 }else{
-    readButton.addEventListener("mouseup", tapOrClick, false);
-    readButton.addEventListener("touchend", tapOrClick, false);
+    readButton.addEventListener("click", tapOrClick, false);
+    readButton.addEventListener("touchstart", tapOrClick, false);
 
-    function tapOrClick(event) {
-        event.preventDefault()
-        saySomething()
+    function tapOrClick(e) {
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("Click")
+        //saySomething()
     }
 }
