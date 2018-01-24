@@ -30,7 +30,7 @@ extends(src='layout.sgr')
             p.story#readme {{item.story}}
             p.via
                 a(href={{item.storyLink}}) Via
-                a.hidden#readit(href='#') Read me a story
+                a#readit(href='#') Read me a story
             if(condition="item.relatedArt!=undefined")
                 label Related Art
                     each(loop='art of item.relatedArt')
