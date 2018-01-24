@@ -16,15 +16,19 @@ window.speechSynthesis.addEventListener('voiceschanged', speakVoice);
 
 function speakVoice() {
     voices=this.getVoices()
-    console.log(voices)
     document.getElementById("readit").classList.remove("hidden");
 };
 
-if (document.getElementById("readit")===null){
+
+var readButton = document.getElementById("readit");
+if (readButton===null){
 
 }else{
-    document.getElementById("readit").addEventListener("click",function(e){
-        e.preventDefault()
+    readButton.addEventListener("mouseup", tapOrClick, false);
+    readButton.addEventListener("touchend", tapOrClick, false);
+
+    function tapOrClick(event) {
+        event.preventDefault()
         saySomething()
-     },false)
+    }
 }
