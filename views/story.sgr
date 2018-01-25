@@ -23,7 +23,7 @@ extends(src='layout.sgr')
             else
                 .botBox
                     #museAI
-                    p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm not very good at reading though, so sorry in advance :(
+                    p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
                     button#readit Read Me a Story, MUSE!
                     button#stopit Shut Up, please...
             
