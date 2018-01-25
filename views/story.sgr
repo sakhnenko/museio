@@ -1,17 +1,12 @@
 extends(src='layout.sgr')
   block(name='content')
-    section.row
-        .half
-            h1 {{item.title}}
-            p.byline
-                span by
-                a(href={{item.storyLink}}) {{item.storyAuthor}} 
-                span.at at 
-                a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
-        .half
-            .pod.floatright
-                .thumbnail(style='background-image:url({{item.museum.fields.image.fields.file.url}})')
-                a(href=/museum/{{item.museum.fields.slug}}) {{item.museum.fields.name}}
+    .storyHeader
+        h1 {{item.title}}
+        p.byline
+            span by
+            a(href={{item.storyLink}}) {{item.storyAuthor}} 
+            span.at at 
+            a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
     
     hr
 
@@ -38,3 +33,15 @@ extends(src='layout.sgr')
                         if(condition="art.fields.photo!=undefined")
                             .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}})', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
         .quarter
+            .locations
+                label Best experienced at
+                    each(loop='location of contentful.location')
+                        .locationItem
+                            each(loop='story of location.stories')
+                                if(condition="story.fields.slug==item.slug")
+                                    p.museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
+                                    if(condition="location.locationLink==undefined")
+                                        p.locationText {{location.location}}
+                                    else
+                                        p.locationLink: a(href={{location.locationLink}}) {{location.location}}
+                           

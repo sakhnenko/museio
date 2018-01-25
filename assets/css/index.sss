@@ -26,15 +26,6 @@ label
     margin-bottom: 10px
     margin-top: 10px
 
-.art_image
-    width: 400px
-    height: 100%
-    max-width: 100%
-    background-size: cover
-    border-radius: 5px
-    flex-basis: 400px
-    background-position: center
-
 section.masonry
     lost-masonry-wrap: no-flex
 
@@ -50,7 +41,7 @@ section.masonry
     margin-bottom: 10px
     margin-top: 10px
 
-    & a 
+    & a
         position: relative
         top: 16px
         margin-right: 10px
@@ -80,6 +71,7 @@ section.masonry
 
 .byline
     color: Black
+    display: block
     & a 
         color: #000
         font-weight: bold
@@ -95,20 +87,61 @@ section.masonry
         overflow: hidden
         vertical-align: top
 
-.details 
-    & .story
-        padding-left: 20px
-        font-size: 14px
-        color: #888
-        border-left: 2px solid #bbb
+.story
+    & .art_image
+        width: 400px
+        height: 100%
+        max-width: 100%
+        background-size: cover
+        border-radius: 5px
+        flex-basis: 400px
+        background-position: center
 
-    & .via 
-        color: #bbbbbb
-        font-size: 12px
+    & .details 
+        & .story
+            padding-left: 20px
+            font-size: 14px
+            color: #888
+            border-left: 2px solid #bbb
 
-        & button
-            border: 1px solid #eee
-            padding: 5px 10px
-            float: right
-            border-radius: 4px
-    
+        & .via 
+            color: #bbbbbb
+            font-size: 12px
+
+            & button
+                border: 1px solid #eee
+                padding: 5px 10px
+                float: right
+                border-radius: 4px
+
+    & .locations
+        padding: 10px 10px 10px 10px
+        margin-left: 30px
+        background-color: #fff9e7
+        border-radius: 4px
+        border-top: 2px solid #ece5d0
+
+        & label
+            margin-top: 0
+
+        & .locationItem
+            font-size: 12px
+
+            & .museumName
+                margin-bottom: 0px
+                & a
+                    font-weight: 600
+                    color: #cab98a
+                    text-decoration: none
+                    &:hover
+                        text-decoration: underline
+
+            & .locationText,
+            & .locationLink
+                margin-top: 3px
+                color: #a79f8a
+                & a
+                    color: #8c8269
+                    &:hover
+                        color: Black
+                

@@ -81,6 +81,13 @@ module.exports = {
           transform: (art) => {
             return art.fields
           }
+        },
+        {
+          name: 'location',
+          id: 'location',
+          transform: (location) => {
+            return location.fields
+          }
         }
       ]
     })
