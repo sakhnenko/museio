@@ -39,9 +39,10 @@ extends(src='layout.sgr')
                         .locationItem
                             each(loop='story of location.stories')
                                 if(condition="story.fields.slug==item.slug")
-                                    p.museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
+                                    .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
                                     if(condition="location.locationLink==undefined")
-                                        p.locationText {{location.location}}
+                                        p {{location.location}}
                                     else
-                                        p.locationLink: a(href={{location.locationLink}}) {{location.location}}
+                                        .locationLink
+                                            a(href={{location.locationLink}}) {{location.location}}
                            

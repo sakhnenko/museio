@@ -4,9 +4,16 @@ extends(src='layout.sgr')
 
     h3 Stories:
         ul
-            each(loop='piece of contentful.pieces')
-              if(condition="piece.museum.fields.slug==item.slug")
+          each(loop='location of contentful.location')
+            if(condition="location.museum.fields.slug==item.slug")
+              each(loop='piece of location.stories')
                 li: .pod
-                    .thumbnail(style='background-image:url({{piece.photo.fields.file.url}})')
-                    a(href=/story/{{piece.slug}}) {{piece.title}}
+                      .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}})')
+                      a(href=/story/{{piece.fields.slug}}) {{piece.fields.title}}
+              
+            //- each(loop='piece of contentful.pieces')
+            //-   if(condition="piece.museum.fields.slug==item.slug")
+            //-     li: .pod
+            //-         .thumbnail(style='background-image:url({{piece.photo.fields.file.url}})')
+            //-         a(href=/story/{{piece.slug}}) {{piece.title}}
               
