@@ -16,16 +16,21 @@ extends(src='layout.sgr')
 
         .half.details
             label Listen
-            if(condition="item.audioEmbed==underfined")
+            if(condition="item.audioEmbed!=undefined")
+                p {{item.audioEmbed}}
+            elseif(condition="item.audio!=undefined")
                 audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
             else
-                p {{item.audioEmbed}}
+                .botBox
+                    #museAI
+                    p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm not very good at reading though, so sorry in advance :(
+                    button#readit Read Me a Story, MUSE!
+                    button#stopit Shut Up, please...
             
             label Story
             p.story#readme {{item.story}}
             p.via
                 a(href={{item.storyLink}}) Via
-                button#readit(href='#') Read me a story
 
             if(condition="item.relatedArt!=undefined")
                 label Related Art
