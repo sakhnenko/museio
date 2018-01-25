@@ -6,7 +6,7 @@ var stopreadingButton = document.getElementById("stopit");
 
 if (readButton!=null){
     readButton.addEventListener("click", tocPlay, false);
-    readButton.addEventListener("touchstart", tocPlay, false);
+    readButton.addEventListener("touchend", tocPlay, false);
 
     function tocPlay(e) {
         if(artyom.speechSupported()){
@@ -21,7 +21,7 @@ if (readButton!=null){
 
 if (stopreadingButton!=null){
     stopreadingButton.addEventListener("click", tocStop, false);
-    stopreadingButton.addEventListener("touchstart", tocStop, false);
+    stopreadingButton.addEventListener("touchend", tocStop, false);
 
     function tocStop(e) {
         if(artyom.speechSupported()){
