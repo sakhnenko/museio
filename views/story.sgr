@@ -1,53 +1,54 @@
 extends(src='layout.sgr')
   block(name='content')
-    .storyHeader
-        h1 {{item.title}}
-        p.byline
-            span by
-            a(href={{item.storyLink}}) {{item.storyAuthor}} 
-            span.at at 
-            a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
-    
-    hr
+    .padding40
+        .storyHeader
+            h1 {{item.title}}
+            p.byline
+                span by
+                a(href={{item.storyLink}}) {{item.storyAuthor}} 
+                span.at at 
+                a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
+        
+        hr
 
-    section.story.row
-        .quarter.storyimage
-            .art_image(style="background-image:url({{item.photo.fields.file.url}}")
+        section.story.row
+            .quarter.storyimage
+                .art_image(style="background-image:url({{item.photo.fields.file.url}}")
 
-        .half.details
-            label Listen
-            if(condition="item.audioEmbed!=undefined")
-                p {{item.audioEmbed}}
-            elseif(condition="item.audio!=undefined")
-                audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
-            else
-                .botBox
-                    #museAI
-                    p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
-                    button#readit Read Me a Story, MUSE!
-                    button#stopit Shut Up, please...
-            
-            label Story
-            p.story#readme {{item.story}}
-            p.via
-                a(href={{item.storyLink}}) Via
+            .half.details
+                label Listen
+                if(condition="item.audioEmbed!=undefined")
+                    p {{item.audioEmbed}}
+                elseif(condition="item.audio!=undefined")
+                    audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
+                else
+                    .botBox
+                        #museAI
+                        p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
+                        button#readit Read Me a Story, MUSE!
+                        button#stopit Shut Up, please...
+                
+                label Story
+                p.story#readme {{item.story}}
+                p.via
+                    a(href={{item.storyLink}}) Via
 
-            if(condition="item.relatedArt!=undefined")
-                label Related Art
-                    each(loop='art of item.relatedArt')
-                        if(condition="art.fields.photo!=undefined")
-                            .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}})', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
-        .quarter
-            .locations
-                label Best experienced at
-                    each(loop='location of contentful.location')
-                        .locationItem
-                            each(loop='story of location.stories')
-                                if(condition="story.fields.slug==item.slug")
-                                    .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
-                                    if(condition="location.locationLink==undefined")
-                                        p {{location.location}}
-                                    else
-                                        .locationLink
-                                            a(href={{location.locationLink}}) {{location.location}}
-                           
+                if(condition="item.relatedArt!=undefined")
+                    label Related Art
+                        each(loop='art of item.relatedArt')
+                            if(condition="art.fields.photo!=undefined")
+                                .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}})', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
+            .quarter
+                .locations
+                    label Best experienced at
+                        each(loop='location of contentful.location')
+                            .locationItem
+                                each(loop='story of location.stories')
+                                    if(condition="story.fields.slug==item.slug")
+                                        .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
+                                        if(condition="location.locationLink==undefined")
+                                            p {{location.location}}
+                                        else
+                                            .locationLink
+                                                a(href={{location.locationLink}}) {{location.location}}
+                            

@@ -16,7 +16,7 @@ html
   body
     header
       #logo: a(href=/) MUSEIO
-    main(role='main' id='content')
+    main(role='main' id='content' class='nonothing')
       block(name='content')
 
     block(name='javascript')
