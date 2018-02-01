@@ -1,0 +1,14 @@
+extends(src='layout.sgr')
+  block(name='content')
+    .padding40
+        form(name="suggestForm" data-netlify="true")
+            p: label Your Name:
+                input(type="text" name="name")
+
+            p: label Your Email:
+                input(type="email" name="email")
+
+            p: label Audio Story Link:
+                input(type="text" name="link")
+
+            p: button(type="submit") Send  

@@ -8,14 +8,14 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
     block(name='title')
-      title MuseIO
+      title Museio
 
     link(rel='stylesheet' href='/css/index.css')
     link(rel='shortcut icon' href="/img/favicon.ico" type="image/x-icon")
-
+    link (rel='stylesheet' href="https://fonts.googleapis.com/css?family=UnifrakturCook:700")
   body
     header
-      #logo: a(href=/) MUSEIO
+      #logo: a(href=/) museio
     main(role='main' id='content' class='nonothing')
       block(name='content')
 
