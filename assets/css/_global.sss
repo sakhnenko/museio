@@ -82,14 +82,32 @@ header
 .padding40
   padding: 40px
 
+a.outline
+  border: 1px solid white
+  background: transparent
+  color: white
+  text-transform: uppercase
+  font-size: 14px
+  font-weight: 500
+  padding: 10px 20px
+  border-radius: 6px
+  cursor: pointer
+  text-decoration: none
+
+  &:hover
+    background-color: rgba(255,255,255,0.8)
+    color: #604c8d
+
+
 @media screen and (max-width: 900px) 
   #content
     padding: 20px 10px
 
-  .quarter
-    lost-column: 1/1 flex
-  .half
-    lost-column: 1/1 flex
+  .responsive
+    .quarter
+      lost-column: 1/1 flex
+    .half
+      lost-column: 1/1 flex
 
   .story
     & .locations

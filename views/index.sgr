@@ -1,6 +1,6 @@
 extends(src='layout.sgr')
   block(name='content')
-    section.row
+    section.row.responsive
       .half.padding40
         h2 Galleries
         ul
