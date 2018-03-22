@@ -1,7 +1,7 @@
 extends(src='layout.sgr')
   block(name='content')
     .padding40
-        form(name="suggestForm" data-netlify="true")
+        form(name="suggestForm" data-netlify="true" id='submit_form')
             p: label Your Name:
                 input(type="text" name="name")
 
@@ -11,4 +11,4 @@ extends(src='layout.sgr')
             p: label Audio Story Link:
                 input(type="text" name="link")
 
-            p: button(type="submit") Send  
+            p: button(type="submit" class='button') Send  

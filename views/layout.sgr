@@ -10,16 +10,16 @@ html
     block(name='title')
       title Museio
 
+    link(rel='stylesheet' href="https://fonts.googleapis.com/css?family=Roboto+Slab:100") 
     link(rel='stylesheet' href='/css/index.css')
     link(rel='shortcut icon' href="/img/favicon.ico" type="image/x-icon")
-    link (rel='stylesheet' href="https://fonts.googleapis.com/css?family=UnifrakturCook:700")
   body
     header
-      .row
-        .half
-          #logo: a(href=/) museio
-        .half.navmenu
-          a.outline(href="/submit") Suggest a Story
+      div
+        #logo: a(href=/) museio
+      div(id='suggest')
+        a(href="/submit" class='button outline') Suggest Story
+
     main(role='main' id='content' class='nonothing')
       block(name='content')
 

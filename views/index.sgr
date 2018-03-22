@@ -1,7 +1,7 @@
 extends(src='layout.sgr')
   block(name='content')
-    section.row.responsive
-      .half.padding40
+    section#homegrid
+      div(class='galleries_box')
         h2 Galleries
         ul
           each(loop='city of contentful.cities')
@@ -13,7 +13,7 @@ extends(src='layout.sgr')
                       .thumbnail(style='background-image:url({{museum.image.fields.file.url}})')
                       a(href=/museum/{{museum.slug}}) {{museum.name}}
 
-      .half.darker.padding40
+      div(class='stories_box')
         h2 Stories
         ul
           each(loop='piece of contentful.pieces')
