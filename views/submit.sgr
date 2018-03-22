@@ -1,7 +1,7 @@
 extends(src='layout.sgr')
   block(name='content')
     .padding40
-        form(name="suggestForm" data-netlify="true" id='submit_form')
+        form(name="suggestForm" data-netlify="true" id='submit_form' method='POST')
             p: label Your Name:
                 input(type="text" name="name")
 
