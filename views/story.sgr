@@ -27,8 +27,7 @@ extends(src='layout.sgr')
                         p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
                         button#readit Read Me a Story, MUSE!
                         button#stopit Shut Up, please...
-                
-                label Story
+                 
                 p.story#readme {{item.story}}
                 p.via
                     a(href={{item.storyLink}}) Via
