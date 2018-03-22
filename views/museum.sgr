@@ -9,6 +9,6 @@ extends(src='layout.sgr')
               if(condition="location.museum.fields.slug==item.slug")
                 each(loop='piece of location.stories')
                   li: .pod.squared
-                        .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}})')
+                        .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
                         a(href=/story/{{piece.fields.slug}}) {{piece.fields.title}}
 

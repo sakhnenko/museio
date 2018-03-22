@@ -13,7 +13,7 @@ extends(src='layout.sgr')
 
         section#storygrid.story
             div.storyimage
-                .art_image(style="background-image:url({{item.photo.fields.file.url}}")
+                .art_image(style="background-image:url({{item.photo.fields.file.url}}?w=500)")
 
             div.details
                 label Listen
@@ -36,7 +36,7 @@ extends(src='layout.sgr')
                     label Related Art
                         each(loop='art of item.relatedArt')
                             if(condition="art.fields.photo!=undefined")
-                                .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}})', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
+                                .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}}?w=200)', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
             div.locations
                     label Best experienced at
                         each(loop='location of contentful.location')

@@ -10,7 +10,7 @@ extends(src='layout.sgr')
                 each(loop='museum of contentful.museums')
                   if(condition="museum.city.fields.slug==city.slug")
                     li: .pod
-                      .thumbnail(style='background-image:url({{museum.image.fields.file.url}})')
+                      .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
                       a(href=/museum/{{museum.slug}}) {{museum.name}}
 
       div(class='stories_box')
@@ -18,7 +18,7 @@ extends(src='layout.sgr')
         ul
           each(loop='piece of contentful.pieces')
             li: .pod.squared
-              .thumbnail(style='background-image:url({{piece.photo.fields.file.url}})')
+              .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
               a(href=/story/{{piece.slug}}) {{piece.title}}
     
               
