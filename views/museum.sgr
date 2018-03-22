@@ -1,6 +1,6 @@
 extends(src='layout.sgr')
   block(name='content')
-    .padding40
+    .paddingBig
       h1 {{item.name}}
 
       h2 Stories
