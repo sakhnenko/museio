@@ -18,7 +18,7 @@ html
       div
         #logo: a(href=/) museio
       div(id='suggest')
-        a(href="/submit" class='button outline') Suggest Story
+        a(href="/submit" class='button outline') Suggest
 
     main(role='main' id='content' class='nonothing')
       block(name='content')
