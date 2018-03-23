@@ -13,6 +13,7 @@ html
     link(rel='stylesheet' href="https://fonts.googleapis.com/css?family=Roboto+Slab:100") 
     link(rel='stylesheet' href='/css/index.css')
     link(rel='shortcut icon' href="/img/favicon.ico" type="image/x-icon")
+    link(rel='apple-touch-icon' href="/img/apple-icon-144x144.png" sizes="144x144")
   body
     header
       div
