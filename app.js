@@ -48,7 +48,11 @@ module.exports = {
           },
           transform: (city) => {
             return city.fields
-          },
+          }
+        },
+        {
+          name: 'features',
+          id: 'features'
         },
         {
           name: 'museums',
