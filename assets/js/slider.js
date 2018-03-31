@@ -6,7 +6,6 @@ if (document.getElementById("features")!=null){
         container: '.featuresSlider',
         items: 1,
         slideBy: 'page',
-        edgePadding: 20,
         autoplay: false,
         speed: 400,
         slideBy: 1,
@@ -19,8 +18,7 @@ if (document.getElementById("features")!=null){
               items: 2
             },
             1000: {
-              items: 3,
-              edgePadding: 0
+              items: 3
             }
           }
       });
