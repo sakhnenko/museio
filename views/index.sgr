@@ -9,9 +9,11 @@ extends(src='layout.sgr')
                   a(href=/story/{{story.fields.slug}}) {{story.fields.title}}
 
     section#homegrid
-      div(class='galleries_box')
+      div#galleries(class='galleries_box')
         h2 Galleries
-        ul
+        input(class="search" placeholder="Search Galleries")
+        
+        ul#gal_display
           each(loop='city of contentful.cities')
             li: h4 {{city.cityName}} 
               ul
@@ -19,15 +21,23 @@ extends(src='layout.sgr')
                   if(condition="museum.city.fields.slug==city.slug")
                     li: .pod
                       .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
-                      a(href=/museum/{{museum.slug}}) {{museum.name}}
+                      a(href='/museum/{{museum.slug}}' class='museumName') {{museum.name}}
+        
+        ul#gal_search(class="list hidden")
+          each(loop='museum of contentful.museums')
+              li: .pod
+                .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
+                a(href='/museum/{{museum.slug}}' class='museum_name') {{museum.name}}
 
-      div(class='stories_box')
+
+      div#stories(class='stories_box')
         h2 Stories
-        ul
+        input(class="search" placeholder="Search Stories")
+        ul(class='list')
           each(loop='piece of contentful.pieces')
             li: .pod.squared
               .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
-              a(href=/story/{{piece.slug}}) {{piece.title}}
-    
+              a(href=/story/{{piece.slug}} class='story_title') {{piece.title}}
+      
               
                   
