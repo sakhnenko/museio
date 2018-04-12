@@ -15,10 +15,12 @@ if (document.getElementById("features")!=null){
         mouseDrag: true,
         responsive: {
             600: {
-              items: 2
+              items: 2,
+              gutter: 10
             },
             1000: {
-              items: 3
+              items: 3,
+              gutter: 10
             }
           }
       });

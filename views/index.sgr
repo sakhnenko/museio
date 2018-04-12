@@ -1,5 +1,6 @@
 extends(src='layout.sgr')
   block(name='content')
+
     section#features
       div.featuresSlider
         each(loop='feature of contentful.features')
@@ -7,6 +8,7 @@ extends(src='layout.sgr')
               each(loop='story of feature.fields.feature')
                 div(style='background-image:url({{story.fields.photo.fields.file.url}}?w=500)')
                   a(href=/story/{{story.fields.slug}}) {{story.fields.title}}
+
 
     section#homegrid
       div#galleries(class='galleries_box')
