@@ -5,6 +5,7 @@ if (document.getElementById("features")!=null){
     var features = tns({
         container: '.featuresSlider',
         items: 1,
+        gutter: 6,
         slideBy: 'page',
         autoplay: false,
         speed: 400,
@@ -17,11 +18,11 @@ if (document.getElementById("features")!=null){
         responsive: {
             600: {
               items: 2,
-              gutter: 10
+              gutter: 6
             },
             1000: {
               items: 3,
-              gutter: 10
+              gutter: 6
             }
           }
       });

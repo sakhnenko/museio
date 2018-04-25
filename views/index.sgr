@@ -6,8 +6,9 @@ extends(src='layout.sgr')
         each(loop='feature of contentful.features')
             if(condition="feature.fields.title=='homepage'")
               each(loop='story of feature.fields.feature')
-                div(style='background-image:url({{story.fields.photo.fields.file.url}}?w=500)')
-                  a(href=/story/{{story.fields.slug}}) {{story.fields.title}}
+                div
+                  div.featureContainer(style='background-image:url({{story.fields.photo.fields.file.url}}?w=500)')
+                    a(href=/story/{{story.fields.slug}}) {{story.fields.title}}
 
 
     section#homegrid
