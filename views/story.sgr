@@ -1,24 +1,22 @@
 extends(src='layout.sgr')
   block(name='content')
     .paddingBig
-        .storyHeader
-            h1 {{item.title}}
-            p.byline
-                span by
-                a(href={{item.storyLink}}) {{item.storyAuthor}} 
-                span.at at 
-                a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
-        
-        hr
-
-        section#storygrid.story
+        #storyheadergrid.storyHeader
+            
+            div.storyTitle
+                h1 {{item.title}}
+                p.byline
+                    span by
+                    a(href={{item.storyLink}}) {{item.storyAuthor}} 
+                    span.at at 
+                    a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
             div.storyimage
                 .art_image(style="background-image:url({{item.photo.fields.file.url}}?w=500)")
 
+        #storygrid.story
             div.details
-                label Listen
                 if(condition="item.audioEmbed!=undefined")
-                    p {{item.audioEmbed}}
+                    div {{item.audioEmbed}}
                 elseif(condition="item.audio!=undefined")
                     audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
                 else
@@ -31,13 +29,9 @@ extends(src='layout.sgr')
                 p.story#readme {{item.story}}
                 p.via
                     a(href={{item.storyLink}}) Via
-
-                if(condition="item.relatedArt!=undefined")
-                    label Related Art
-                        each(loop='art of item.relatedArt')
-                            if(condition="art.fields.photo!=undefined")
-                                .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}}?w=200)', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
-            div.locations
+            .storySpacer
+            .storyInfobar
+                div.locations
                     label Best experienced at
                         each(loop='location of contentful.location')
                             .locationItem
@@ -49,4 +43,10 @@ extends(src='layout.sgr')
                                         else
                                             .locationLink
                                                 a(href={{location.locationLink}}) {{location.location}}
-                            
+                
+                if(condition="item.relatedArt!=undefined")
+                    label Related Art
+                        each(loop='art of item.relatedArt')
+                            if(condition="art.fields.photo!=undefined")
+                                .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}}?w=200)', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
+        
