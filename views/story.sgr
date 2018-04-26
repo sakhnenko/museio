@@ -1,8 +1,7 @@
 extends(src='layout.sgr')
   block(name='content')
-    .paddingBig
-        #storyheadergrid.storyHeader
-            
+    section#storygrid(class=story)
+        .details
             div.storyTitle
                 h1 {{item.title}}
                 p.byline
@@ -10,27 +9,25 @@ extends(src='layout.sgr')
                     a(href={{item.storyLink}}) {{item.storyAuthor}} 
                     span.at at 
                     a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
-            div.storyimage
+                hr
+            if(condition="item.audioEmbed!=undefined")
+                div {{item.audioEmbed}}
+            elseif(condition="item.audio!=undefined")
+                audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
+            else
+                .botBox
+                    #museAI
+                    p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
+                    button#readit Read Me a Story, MUSE!
+                    button#stopit Shut Up, please...
+                
+            p.storyText#readme {{item.story}}
+            p.via
+                a(href={{item.storyLink}}) Via
+        .storySpacer
+        .storyInfobar
                 .art_image(style="background-image:url({{item.photo.fields.file.url}}?w=500)")
 
-        #storygrid.story
-            div.details
-                if(condition="item.audioEmbed!=undefined")
-                    div {{item.audioEmbed}}
-                elseif(condition="item.audio!=undefined")
-                    audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
-                else
-                    .botBox
-                        #museAI
-                        p Hi! I'm MUSE an little bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
-                        button#readit Read Me a Story, MUSE!
-                        button#stopit Shut Up, please...
-                 
-                p.story#readme {{item.story}}
-                p.via
-                    a(href={{item.storyLink}}) Via
-            .storySpacer
-            .storyInfobar
                 div.locations
                     label Best experienced at
                         each(loop='location of contentful.location')
@@ -45,8 +42,9 @@ extends(src='layout.sgr')
                                                 a(href={{location.locationLink}}) {{location.location}}
                 
                 if(condition="item.relatedArt!=undefined")
-                    label Related Art
-                        each(loop='art of item.relatedArt')
-                            if(condition="art.fields.photo!=undefined")
-                                .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}}?w=200)', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
+                    div.relatedArt
+                        label Related Art
+                            each(loop='art of item.relatedArt')
+                                if(condition="art.fields.photo!=undefined")
+                                    .related_thumbnail.tipsy(style='background-image: url({{art.fields.photo.fields.file.url}}?w=200)', data-tipsy="{{art.fields.title}} by {{art.fields.artist}}") 
         
