@@ -61,6 +61,17 @@ label
             &:hover
                 text-decoration: underline
 
+#stories
+    & .header
+        & a
+            float: right
+            color: #666
+            display: inline-block
+            margin-top: 5px
+
+            &:hover
+                color: #444
+
 input.search
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .05)
     width: calc(100% - 10px)
@@ -107,14 +118,72 @@ input.search
         & .thumbnail
             border-radius: 8px
 
-.related_thumbnail 
-    width: 100px
-    height: 100px
-    background-size: cover
-    display: inline-block
-    margin-right: 15px
-    border-radius: 3px
-    cursor: help
+.bigpod 
+    display: grid
+    grid-template-columns: 110px 1fr
+    align-items: start
+    justify-items: left
+    margin-bottom: 15px
+    border: 1px solid #f4f4f4
+    padding: 5px
+    border-radius: 10px
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.05)
+    background: White
+
+    & .miniRelated
+        margin: 5px 0
+        font-size: 14px
+        color: #888
+
+        & .artLoc:after, & .artPiece:after
+            content: " + "
+            color: #444
+
+        & .artLoc:last-child:after, & .artPiece:last-child:after 
+            content: ""
+        
+    & a
+        margin-right: 10px
+        font-weight: 300
+        font-size: 20px
+        color: #666
+        margin-bottom: 10px
+        display: inline-block
+
+        &:hover
+            text-decoration: underline
+            color: #444
+
+    & .thumbnail 
+        width: 100px
+        height: 100px
+        background-size: cover
+        float: left
+        margin-right: 15px
+        border-radius: 8px
+
+
+
+.artCard
+    height: 120px
+    & .related_thumbnail 
+        width: 100px
+        height: 100px
+        background-size: cover
+        display: inline-block
+        margin-right: 15px
+        border-radius: 3px
+        float: left
+    & .artTitle
+        font-weight: 200
+        font-size: 20px
+        margin-top: 0
+        margin-bottom: 5px
+    & .artByline
+        margin-top: 0px
+        font-size: 14px
+        color: #666
+        font-weight: 600
 
 .byline
     color: Black
