@@ -28,7 +28,8 @@ html
     header
       div
         #logo: a(href=/) museio
-      div(id='suggest')
+      div(id='menu')
+        a(href="/stories" class='button outline') All Stories
         a(href="/submit" class='button outline') Suggest
 
     main(role='main' id='content' class='nonothing')
