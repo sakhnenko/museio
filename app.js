@@ -80,6 +80,16 @@ module.exports = {
           }
         },
         {
+          name: 'recentstories',
+          id: 'piece',
+          transform: (piece) => {
+            return piece.fields
+          },
+          filters: {
+            limit: 35
+          }
+        },
+        {
           name: 'art',
           id: 'art',
           transform: (art) => {
