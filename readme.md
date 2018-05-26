@@ -2,7 +2,7 @@
 
 Art curator
 
-http://muse.netlify.com
+http://museio.org
 
 
 -------
