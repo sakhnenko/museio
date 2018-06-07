@@ -13,6 +13,9 @@ a
   &:hover
     color: #444
 
+.centered
+  text-align: center
+
 @keyframes Gradient
   0%
     background-position: 0% 50%
@@ -21,10 +24,18 @@ a
   100%
     background-position: 0% 50%
 
+@keyframes Gradetext
+  0%
+    color: #604c8d
+  50%
+    color: #E73C7E
+  100%
+    color: #604c8d
+
 header
-  background: linear-gradient(-45deg, #604c8d, #E73C7E, #604c8d, #23D5AB)
+  background: linear-gradient(-45deg, #604c8d, #E73C7E, #604c8d, #E73C7E)
   background-size:  400% 400%
-  animation: Gradient 22s ease infinite
+  animation: Gradient 60s ease infinite
 
   display: grid
   grid-template-columns: 1fr 1fr

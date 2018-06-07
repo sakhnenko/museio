@@ -32,6 +32,7 @@ html
       div
         #logo: a(href=/) museio
       div(id='menu')
+        a(href="/about" class='button outline') About Us
         a(href="/stories" class='button outline') All Stories
         a(href="/submit" class='button outline') Suggest
 

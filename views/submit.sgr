@@ -1,6 +1,13 @@
 extends(src='layout.sgr')
   block(name='content')
-    .paddingBig
+    section#aboutus
+        h1 Suggest a Story
+        p
+            | If you find any interesting audio stories that have already been shared online (I’ve been mainly scouring Soundcloud, YouTube and Podcast directories) just send us the link and we'll add it into the system.
+        p
+            | For anything else you can always 
+            a(href='mailto:slavas@gmail.com' style='font-weight:600') contact me by email
+        hr
         form(name="suggestForm" data-netlify="true" id='submit_form' method='POST')
             p: label Your Name:
                 input(type="text" name="name")

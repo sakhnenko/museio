@@ -1,3 +1,6 @@
 extends(src='layout.sgr')
   block(name='content')
-    div Thank you for submitting your suggestion
+    section#aboutus
+        h1 Thank you for the suggestion!
+        p We will review it shortly and try to add it to our database
+        a(href='/') Go back home

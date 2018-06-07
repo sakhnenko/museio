@@ -1,0 +1,64 @@
+extends(src='layout.sgr')
+  block(name='content')
+    section#aboutus
+        h1 About Museio.org
+        h2 Collection of audio stories to enjoy inside art galleries
+
+        p
+            | Museio.org is our first attempt to answer the question: 
+            em What is out there for the audience that wants to dive deeper into the stories behind the art that they pass by in museums and galleries? 
+
+        p What if upon entering an art gallery, I could pull out my phone and discover that there is a dozen audio stories in here, recorded by historians, philosophers, poets and artists themselves, all linked to a specific place within the gallery where I could listen to the story, while looking at the artwork?
+
+        h2 How to use it?
+        p
+            |Open the 
+            a(href='/') landing page 
+            |to see if there are any museums or galleries listed in your hometown (or somewhere you are travelling to). When you enter the gallery, check what stories exist within. Open a story and look to the 
+            strong "Best experienced at" 
+            | section to see what room you need to go to. Once there, find the painting or sculpture and press Play (
+            em log into the museum WiFi first!
+            | ).
+        
+        h2 Read our manifesto
+        a#manifesto(href='https://medium.com/@sssssssssslava/slower-art-8a0773ee60f9')
+            div(class=bigpod)
+                h3 slower art
+                p a case against channel-surfing our culture
+                img(src='/img/manifesto.gif')
+
+        h2 How to help?
+        p The idea for Museio was always to be an open-source project; connecting art historians, podcasters, curators and gallery administrators in one place, to help nurture and promote this alternative way of experiencing the wealth of art and culture that’s collected in our institutions.
+
+        p If any of these ideas connect with you, there are many ways for all of us to start working together:
+
+        h3 Museum Curators: 
+        p Make recordings of your discussions about the favorite pieces in your collections
+
+        h3 Art Historians: 
+        p If any artworks in your research have fascinating stories that the public would enjoy, write short scripts that we can record and share
+
+        h3 Art Podcasters: 
+        p If your episodes have any interesting anecdotes about specific artworks, let’s cut them into self-contained audio files and link them to a location where the audience can hear them while admiring the art
+
+        h3 Art History Students: 
+        p If you have to write an essay for a class and you think it’s something worth sharing more widely, let’s turn it into a script and record the story
+
+        h3 Radio / Journalism Students: 
+        p There’s lots of fascinating art stories that are not yet recorded, we can produce and record pieces based on that material
+
+        h3 Developers: 
+        p
+            | The initial museio.org is the most basic of all possible web applications. Help make it more flexible and usable! You can take a look at the 
+            a(href='https://github.com/sakhnenko/museio') project on GitHub
+
+        h3 Art enthusiasts: (that’s all of you if you made it this far) 
+        p
+            | Search far and wide for any interesting audio stories that have already been shared online (I’ve been mainly scouring Soundcloud, YouTube and Podcast directories) and 
+            a(href="http://www.museio.org/submit") submit them into the system
+
+        h3 Artists: 
+        p I was going to suggest that maybe you can record stories talking about your own work, but I read enough artists statements to know that this might be a dangerous proposition. Still might be worth a try though...
+
+        h3 Gallery Administrators: 
+        p Do you want to build up the library of in-depth stories about your collection? Let’s work together to make it happen!
