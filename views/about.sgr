@@ -11,14 +11,20 @@ extends(src='layout.sgr')
         p What if upon entering an art gallery, I could pull out my phone and discover that there is a dozen audio stories in here, recorded by historians, philosophers, poets and artists themselves, all linked to a specific place within the gallery where I could listen to the story, while looking at the artwork?
 
         h2 How to use it?
-        p
-            |Open the 
-            a(href='/') landing page 
-            |to see if there are any museums or galleries listed in your hometown (or somewhere you are travelling to). When you enter the gallery, check what stories exist within. Open a story and look to the 
-            strong "Best experienced at" 
-            | section to see what room you need to go to. Once there, find the painting or sculpture and press Play (
-            em log into the museum WiFi first!
-            | ).
+        ol
+            li
+                | Open the 
+                a(href='/') landing page 
+                |to see if there are any museums or galleries listed in your hometown (or your travel destination)
+            li Upon entering the gallery, check what stories we have inside
+            li
+                | Open a story and look to the 
+                strong "Best experienced at" 
+                | section to see what room you need to go to 
+            Li
+                | Once there, find the painting or sculpture and press Play (
+                em Log into the museum WiFi first!
+                | )
         
         h2 Read our manifesto
         a#manifesto(href='https://medium.com/@sssssssssslava/slower-art-8a0773ee60f9')

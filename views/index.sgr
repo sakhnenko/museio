@@ -2,7 +2,7 @@ extends(src='layout.sgr')
   block(name='content')
     section#motto
       div(class='centered')
-        | Collection of audio stories to enjoy inside art galleries
+        span Collection of audio stories to enjoy inside art galleries
         a(href='/about') About Us 
         a(href='https://medium.com/@sssssssssslava/slower-art-8a0773ee60f9') Manifesto 
           
