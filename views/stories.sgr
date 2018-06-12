@@ -5,21 +5,21 @@ extends(src='layout.sgr')
         input(class="search" placeholder="Search Stories")
         ul(class='list searchable')
           each(loop='piece of contentful.pieces')
-            li: .bigpod
-              .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
-              .poddetail
-                a(href=/story/{{piece.slug}} class='story_title') {{piece.title}}
-                if(condition="piece.relatedArt!=undefined")
-                    div.miniRelated
-                        span 
+            li
+              a(href='/story/{{piece.slug}}'} class='podLink')
+                .bigpod
+                  .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
+                  .poddetail
+                    div(class='story_title') {{piece.title}}
+                    if(condition="piece.relatedArt!=undefined")
+                      div.miniRelated
                         img(src='img/art.svg', width='16px')
                         each(loop='art of piece.relatedArt')
-                            span(class=artPiece) "{{art.fields.title}}" by {{art.fields.artist}}
-                div.miniRelated
-                    span 
-                        img(src='img/museum.svg', width='16px')
-                        each(loop='location of contentful.location')
-                            each(loop='story of location.stories')
-                                if(condition="story.fields.slug==piece.slug")
-                                    span(class=artLoc) {{location.museum.fields.name}}
+                          span(class=artPiece) "{{art.fields.title}}" by {{art.fields.artist}}
+                    div.miniRelated
+                      img(src='img/museum.svg', width='16px')
+                      each(loop='location of contentful.location')
+                          each(loop='story of location.stories')
+                            if(condition="story.fields.slug==piece.slug")
+                              span(class=artLoc) {{location.museum.fields.name}}
                                 

@@ -27,27 +27,32 @@ extends(src='layout.sgr')
               ul
                 each(loop='museum of contentful.museums')
                   if(condition="museum.city.fields.slug==city.slug")
-                    li: .pod
-                      .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
-                      a(href='/museum/{{museum.slug}}' class='museumName') {{museum.name}}
+                    li
+                      a(href='/museum/{{museum.slug}}' class='podLink')
+                        .pod
+                          .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
+                          span(class='museumName') {{museum.name}}
         
         ul#gal_search(class="list hidden")
           each(loop='museum of contentful.museums')
-              li: .pod
-                .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
-                a(href='/museum/{{museum.slug}}' class='museum_name') {{museum.name}}
+            li
+              a(href='/museum/{{museum.slug}}' class='podLink')
+                .pod
+                  .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
+                  span(class='museum_name') {{museum.name}}
 
 
       div#stories(class='stories_box')
         div.header
           a(href='/stories') View All
           h2 Recent Stories
-        input(class="search" placeholder="Search Stories")
         ul(class='list searchable')
           each(loop='piece of contentful.recentstories')
-            li: .pod.squared
-              .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
-              a(href=/story/{{piece.slug}} class='story_title') {{piece.title}}
+            li
+              a(href='/story/{{piece.slug}}' class='podLink')
+                .pod.squared
+                  .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
+                  span(class='story_title') {{piece.title}}
         a(href='/stories' ) View All Stories
               
                   

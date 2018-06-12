@@ -276,7 +276,10 @@ input.search
   border-radius: 10px
   box-shadow: 1px 1px 3px rgba(0,0,0,0.05)
   background: White
-
+  & .story_title
+    font-size: 20px
+    font-weight: 700
+    margin-bottom: 10px
   & .miniRelated
     margin: 5px 0
     font-size: 14px
@@ -498,3 +501,10 @@ input.search
         color: #d63f80
       & p
         color: #888
+
+a.podLink
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    & .pod, & .bigpod
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, .15)

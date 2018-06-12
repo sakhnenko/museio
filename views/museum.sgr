@@ -8,7 +8,9 @@ extends(src='layout.sgr')
             each(loop='location of contentful.location')
               if(condition="location.museum.fields.slug==item.slug")
                 each(loop='piece of location.stories')
-                  li: .pod.squared
-                        .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
-                        a(href=/story/{{piece.fields.slug}}) {{piece.fields.title}}
+                  li
+                    a(href='/story/{{piece.fields.slug}}', class='podLink')
+                      .pod.squared
+                          .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
+                          span {{piece.fields.title}}
 

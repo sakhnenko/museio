@@ -86,7 +86,7 @@ module.exports = {
             return piece.fields
           },
           filters: {
-            limit: 35
+            limit: 38
           }
         },
         {
