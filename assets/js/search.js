@@ -2,7 +2,6 @@ import List from 'list.js'
 
 
 if (document.getElementsByClassName("searchable")[0]!=null){
-    console.log('searchable')
     var options = {
         valueNames: [ 'story_title', 'artPiece', 'artLoc']
       }
