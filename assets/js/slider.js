@@ -15,7 +15,7 @@ if (document.getElementById("features")!=null){
         controls: false,
         autoplayButtonOutput: false,
         mouseDrag: true,
-        lazyload: true,
+        lazyload: false,
         responsive: {
             600: {
               items: 2,
