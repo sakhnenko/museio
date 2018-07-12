@@ -1,4 +1,4 @@
-import {tns} from "tiny-slider/src/tiny-slider.module.js"
+import {tns} from "tiny-slider/src/tiny-slider.js"
 
 
 if (document.getElementById("features")!=null){
