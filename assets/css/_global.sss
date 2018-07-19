@@ -7,7 +7,8 @@ body
 #content
   padding: 50px
   padding-top: 20px
-
+  z-index: 1
+  position: relative
 a
   color: #666
   &:hover
@@ -18,15 +19,16 @@ a
 
 header
   background: White
-  border-bottom: 1px solid Black
-
-  display: grid
-  grid-template-columns: 1fr 1fr
-  grid-column-gap: 1em
+  border-bottom: 1px solid #ccc
+  z-index: 10
   align-items: center
- 
-  & #menu
-    justify-self: end
+
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: stretch
+  align-items: center
 
   & #logo
     padding: 10px
@@ -38,12 +40,53 @@ header
     display: inline-block
     color: #000
 
+    order: 1
+    flex: 0 1 200px
+    align-self: auto
+
     & a
       color: Black
       text-decoration: none
 
       &:hover
         text-decoration: underline
+
+  & #motto
+    font-size: 20px
+    font-weight: 300
+    text-transform: capitalize
+    text-align: right
+
+    order: 2
+    flex: 1 1 auto
+    align-self: auto
+
+    & span
+      color: #aaa
+      position: relative
+      top: -3px
+      margin-right: 30px
+
+  & #menu
+    font-size: 20px
+
+    order: 3
+    flex: 0 1 330px
+    align-self: auto
+
+    & span
+      font-weight: 300
+      margin-right: 40px
+    & a
+      display: inline-block
+      margin-right: 15px
+      text-decoration: none
+      font-weight: 600
+      border-bottom: 3px solid #ddd
+      color: Black
+      &:hover
+        border-color: #d63f80
+        color: black
 
 #homegrid
   display: grid
@@ -138,25 +181,7 @@ label
   margin-bottom: 10px
   margin-top: 10px
 
-#motto
-  padding: 20px
-  padding-top: 25px
-  display: grid
-  font-size: 20px
-  font-weight: 300
-  text-transform: capitalize
-  text-align: center
-  background: #f8f8f8
-  & a
-    display: inline-block
-    margin-left: 15px
-    text-decoration: none
-    font-weight: 600
-    border-bottom: 5px solid #ddd
-    color: Black
-    &:hover
-      border-color: #d63f80
-      color: black
+  
 #features
   box-shadow: 0px  8px 10px -5px rgba(0,0,0,0.1)
 
@@ -369,8 +394,9 @@ input.search
         border-radius: 4px
 
 .storyInfobar
-  box-shadow: 0 -1px 7px rgba(0,0,0, 0.2)
+  box-shadow: 0 3px 7px -3px rgba(0, 0, 0, .9)
   background: #fbfbfb
+  z-index: 9
   & .art_image
     width: 100%
     height: 200px

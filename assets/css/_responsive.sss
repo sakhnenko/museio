@@ -21,6 +21,20 @@ body
             grid-column: 1/2
             grid-row: 1
 
+    header
+        flex-direction: column
+        & #logo
+            flex-basis: auto
+            margin: 0
+        & #motto
+            flex-basis: auto
+            & span
+                color: #aaa
+                margin: 0
+        & #menu
+            flex-basis: auto
+            padding-bottom: 10px
+            padding-top: 15px
 
 @media screen and (max-width: 700px)
     #aboutus
@@ -54,11 +68,6 @@ body
             grid-column: 1/3
             grid-row: 1
 
-    header 
-        & #logo
-            margin-left: 0
-        & #suggest
-            padding-right: 1em
 
     #homegrid
         & .galleries_box

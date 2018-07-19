@@ -29,12 +29,15 @@ html
 
   body
     header
-      div
-        #logo: a(href=/) museio
+      div(id='logo')
+        a(href=/) museio
+      div(id='motto')
+        span Art Stories to Listen Inside Galleries
       div(id='menu')
-        a(href="/about" class='button ') About Us
-        a(href="/stories" class='button ') All Stories
-        a(href="/submit" class='button ') Suggest
+        a(href="/" ) Home
+        a(href="/about" ) About
+        a(href="/stories" ) Stories
+        a(href="/submit" ) Suggest
 
     main(role='main' id='content' class='nonothing')
       block(name='content')
