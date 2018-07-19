@@ -16,26 +16,9 @@ a
 .centered
   text-align: center
 
-@keyframes Gradient
-  0%
-    background-position: 0% 50%
-  50%
-    background-position: 100% 50%
-  100%
-    background-position: 0% 50%
-
-@keyframes Gradetext
-  0%
-    color: #604c8d
-  50%
-    color: #E73C7E
-  100%
-    color: #604c8d
-
 header
-  background: linear-gradient(-45deg, #604c8d, #E73C7E, #604c8d, #E73C7E)
-  background-size:  400% 400%
-  animation: Gradient 60s ease infinite
+  background: White
+  border-bottom: 1px solid Black
 
   display: grid
   grid-template-columns: 1fr 1fr
@@ -46,25 +29,17 @@ header
     justify-self: end
 
   & #logo
-    padding: 20px
-    margin-left: 30px
+    padding: 10px
+    margin-left: 10px
+    padding-top: 0px
     font-size: 50px
     font-weight: 100
     font-family: 'Roboto Slab', serif
     display: inline-block
-    color: #fff
-    text-shadow:
-      0 0 5px #fff,
-      0 0 10px #fff,
-      0 0 20px #fff,
-      0 0 40px #0ff,
-      0 0 80px #0ff,
-      0 0 90px #0ff,
-      0 0 100px #0ff,
-      0 0 150px #0ff
+    color: #000
 
     & a
-      color: White
+      color: Black
       text-decoration: none
 
       &:hover
@@ -167,11 +142,10 @@ label
   padding: 20px
   padding-top: 25px
   display: grid
-  font-size: 25px
-  font-weight: 700
+  font-size: 20px
+  font-weight: 300
   text-transform: capitalize
   text-align: center
-  animation: Gradetext 60s ease infinite
   background: #f8f8f8
   & a
     display: inline-block
@@ -456,7 +430,7 @@ input.search
 #aboutus
   padding: 50px
   padding-top: 10px
-  width: 50%
+  width: 65%
   box-sizing: border-box
   & h1
     font-size: 50px
