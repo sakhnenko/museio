@@ -86,7 +86,8 @@ module.exports = {
             return piece.fields
           },
           filters: {
-            limit: 38
+            order: '-sys.updatedAt',
+            limit: 50
           }
         },
         {
