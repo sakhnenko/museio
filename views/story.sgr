@@ -10,6 +10,7 @@ extends(src='layout.sgr')
                     span.at at 
                     a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
                 hr
+            h4 Play the Story:
             if(condition="item.audioEmbed!=undefined")
                 div {{item.audioEmbed}}
             elseif(condition="item.audio!=undefined")
@@ -21,7 +22,7 @@ extends(src='layout.sgr')
                     button#readit Read Me a Story, MUSE!
                     button#stopit Shut Up, please...
                 
-            p.storyText#readme {{item.story}}
+            p.storyText#readme(md) {{item.story}}
             p.via
                 a(href={{item.storyLink}}) Via
         .storySpacer
