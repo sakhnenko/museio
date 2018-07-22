@@ -26,7 +26,8 @@ extends(src='layout.sgr')
                       a(href='/museum/{{museum.slug}}' class='podLink')
                         .pod
                           .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
-                          span(class='museumName') {{museum.name}}
+                          div
+                            span(class='museumName') {{museum.name}}
         
         ul#gal_search(class="list hidden")
           each(loop='museum of contentful.museums')
@@ -34,7 +35,9 @@ extends(src='layout.sgr')
               a(href='/museum/{{museum.slug}}' class='podLink')
                 .pod
                   .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
-                  span(class='museum_name') {{museum.name}}
+                  div(class='museumLabel')
+                    span(class='museum_name') {{museum.name}}
+                    span(class='cityCountry') {{museum.city.fields.cityName}}, {{museum.city.fields.country}}
 
 
       div#stories(class='stories_box')

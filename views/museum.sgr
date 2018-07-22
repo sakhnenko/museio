@@ -2,7 +2,6 @@ extends(src='layout.sgr')
   block(name='content')
     .paddingBig
       h1 {{item.name}}
-
       h2 Stories
           ul
             each(loop='location of contentful.location')
@@ -13,4 +12,6 @@ extends(src='layout.sgr')
                       .pod.squared
                           .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
                           span {{piece.fields.title}}
+
+                          
 

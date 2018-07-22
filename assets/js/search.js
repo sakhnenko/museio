@@ -9,7 +9,7 @@ if (document.getElementsByClassName("searchable")[0]!=null){
 
 
     var options2 = {
-        valueNames: [ 'museum_name' ]
+        valueNames: [ 'museumLabel' ]
       };
       
     var galleryList = new List('galleries', options2);
