@@ -71,6 +71,9 @@ module.exports = {
         {
           name: 'pieces',
           id: 'piece',
+          filters: {
+            limit: 1000
+          },
           transform: (piece) => {
             return piece.fields
           },
@@ -100,6 +103,9 @@ module.exports = {
         {
           name: 'location',
           id: 'location',
+          filters: {
+            limit: 1000
+          },
           transform: (location) => {
             return location.fields
           }

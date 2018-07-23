@@ -18,7 +18,7 @@
     "postcss-tipsy": "^1.0.0",
     "reshape-standard": "^3.3.0",
     "spike": "^2.2.2",
-    "spike-contentful": "^2.0.1",
+    "spike-contentful": "^3.1.1",
     "spike-css-standards": "^3.0.0",
     "spike-js-standards": "^2.1.0",
     "spike-optimize": "^0.1.2",
