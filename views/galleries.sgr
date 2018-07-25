@@ -1,15 +1,18 @@
 extends(src='layout.sgr')
   block(name='content')
 
-    section#homegrid
-      div#galleries(class='galleries_box')
-        h2 Destinations
-        input(class="search" placeholder="Search Galleries")
-        
-        ul#gal_display.searchable
+    section.paddingBig
+      div#galleries
+        h2 All Destinations
+        input(class="search" placeholder="&#x1f50d; Search galleries, cities, countries")
+        br
+        ul#gal_display
           each(loop='city of contentful.cities')
-              li: h4 {{city.cityName}} 
-                ul
+              li
+                h4
+                  span {{city.cityName}}
+                  span.countryHeader {{city.country}}
+                ul(class=podGroup)
                   each(loop='museum of contentful.museums')
                     if(condition="museum.city.fields.slug==city.slug")
                       li
@@ -18,7 +21,7 @@ extends(src='layout.sgr')
                             .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
                             div
                               span(class='museumName') {{museum.name}}
-        ul#gal_search(class="list hidden")
+        ul#gal_search(class="list hidden searchable podGroup")
           each(loop='museum of contentful.museums')
             li
               a(href='/museum/{{museum.slug}}' class='podLink')

@@ -35,7 +35,7 @@ extends(src='layout.sgr')
             });
           }
       h2 Stories
-      ul
+      ul.podGroup
         each(loop='location of contentful.location')
           if(condition="location.museum.fields.slug==item.slug")
             each(loop='piece of location.stories')

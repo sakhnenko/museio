@@ -16,9 +16,9 @@ if (document.getElementsByClassName("searchable")[0]!=null){
     galleryList.on("updated", function(list){
         if (list.searched == true) {
             document.getElementById("gal_display").style.display = 'none'
-            document.getElementById("gal_search").style.display = 'block'
+            document.getElementById("gal_search").style.display = 'flex'
           } else {
-            document.getElementById("gal_display").style.display = 'block'
+            document.getElementById("gal_display").style.display = 'flex'
             document.getElementById("gal_search").style.display = 'none'
           }
     })

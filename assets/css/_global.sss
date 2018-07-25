@@ -17,6 +17,15 @@ a
 .centered
   text-align: center
 
+ul.podGroup 
+  display: flex
+  flex-direction: row
+  align-content: stretch
+  flex-wrap: wrap
+  & li
+    width: 45%
+    margin-right: 2%
+
 header
   background: White
   border-bottom: 1px solid #ccc
@@ -313,6 +322,11 @@ input.search
       float: right
       background-position: center
       border-radius: 4px 0 0 4px
+
+.countryHeader
+  color: #aaa
+  font-weight: 300
+  margin-left: 10px
 
 .bigpod 
   display: grid
