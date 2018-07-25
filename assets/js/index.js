@@ -1,5 +1,5 @@
+require('./map')
 require('./slider')
 require('./synth')
 require('./museai')
 require('./search')
-

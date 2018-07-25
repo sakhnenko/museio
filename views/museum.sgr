@@ -7,8 +7,9 @@ extends(src='layout.sgr')
           div#musephoto(style='background-image: url({{item.image.fields.file.url}}?w=200)')
         h1 {{item.name}}
         div.address {{item.address}}
+        script(defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyClEuxsgt8ANv4njLy8ok6qIfKvTk9P8Y8&callback=initMap')
         script.
-          function initMap() {
+          function initMap(){
             var latlon = {{JSON.stringify(item.location)}}
             var musepos = {lat: latlon.lat, lng: latlon.lon}
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -21,6 +22,12 @@ extends(src='layout.sgr')
             });
             var marker = new google.maps.Marker({position: musepos, map: map});
             map.addListener('click', function() {
+              window.open(
+                'https://www.google.com/maps/search/?api=1&query={{item.address}}',
+                '_blank'
+              );
+            });
+            marker.addListener('click', function() {
               window.open(
                 'https://www.google.com/maps/search/?api=1&query={{item.address}}',
                 '_blank'

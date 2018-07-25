@@ -10,15 +10,13 @@ html
     block(name='title')
       title Museio
 
-    link(rel='stylesheet' href="https://fonts.googleapis.com/css?family=Roboto+Slab:100") 
-    link(rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/tiny-slider.css") 
+    link(rel='stylesheet' href="https://fonts.googleapis.com/css?family=Roboto+Slab:100")  
     
     link(rel='stylesheet' href='/css/index.css')
     link(rel='shortcut icon' href="/img/favicon.ico" type="image/x-icon")
     link(rel='apple-touch-icon' href="/img/apple-icon-144x144.png" sizes="144x144")
 
     script(async='true' src='https://www.googletagmanager.com/gtag/js?id=UA-117427131-1')
-    script(async='true' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyClEuxsgt8ANv4njLy8ok6qIfKvTk9P8Y8&callback=initMap')
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -28,7 +26,7 @@ html
     script.
       (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:893052,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 
-    script(src='/js/main.js' defer)
+    
   body
     header
       div(id='logo')
@@ -45,3 +43,5 @@ html
       block(name='content')
 
     block(name='javascript')
+      
+      script(src='/js/main.js' defer)
