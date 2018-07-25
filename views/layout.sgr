@@ -34,8 +34,8 @@ html
       div(id='motto')
         span Art Stories to Listen Inside Galleries
       div(id='menu')
-        a(href="/" ) Home
         a(href="/about" ) About
+        a(href="/galleries" ) Galleries
         a(href="/stories" ) Stories
         a(href="/submit" ) Suggest
 

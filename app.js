@@ -51,6 +51,10 @@ module.exports = {
           }
         },
         {
+          name: 'allcities',
+          id: 'city',
+        },
+        {
           name: 'features',
           id: 'features'
         },
@@ -90,7 +94,7 @@ module.exports = {
           },
           filters: {
             order: '-sys.updatedAt',
-            limit: 50
+            limit: 31
           }
         },
         {

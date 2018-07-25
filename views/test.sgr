@@ -1,3 +1,0 @@
-extends(src='layout.sgr')
-textarea {{ JSON.stringify(contentful.location) }}
- 

@@ -13,38 +13,28 @@ extends(src='layout.sgr')
 
     section#homegrid
       div#galleries(class='galleries_box')
-        h2 Galleries
-        input(class="search" placeholder="Search Galleries")
-        
-        ul#gal_display.searchable
+        div.headerLink
+          a(href='/galleries') All Galleries
+          h2 Featured Destinations
+        ul(class='list')
           each(loop='city of contentful.cities')
-            li: h4 {{city.cityName}} 
-              ul
-                each(loop='museum of contentful.museums')
-                  if(condition="museum.city.fields.slug==city.slug")
-                    li
-                      a(href='/museum/{{museum.slug}}' class='podLink')
-                        .pod
-                          .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
-                          div
-                            span(class='museumName') {{museum.name}}
-        
-        ul#gal_search(class="list hidden")
-          each(loop='museum of contentful.museums')
-            li
-              a(href='/museum/{{museum.slug}}' class='podLink')
-                .pod
-                  .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
-                  div(class='museumLabel')
-                    span(class='museum_name') {{museum.name}}
-                    span(class='cityCountry') {{museum.city.fields.cityName}}, {{museum.city.fields.country}}
-
-
+            if(condition="city.featured!=undefined&&city.featured==true")
+              li: h4 {{city.cityName}} 
+                ul
+                  each(loop='museum of contentful.museums')
+                    if(condition="museum.city.fields.slug==city.slug")
+                      li
+                        a(href='/museum/{{museum.slug}}' class='podLink')
+                          .pod
+                            .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
+                            div
+                              span(class='museumName') {{museum.name}}
+        a(href='/galleries') View All Galleries
       div#stories(class='stories_box')
-        div.header
-          a(href='/stories') View All
-          h2 Recent Stories
-        ul(class='list searchable')
+        div.headerLink
+          a(href='/stories') All Stories
+          h2 Recent Additions
+        ul(class='list')
           each(loop='piece of contentful.recentstories')
             li
               a(href='/story/{{piece.slug}}' class='podLink')

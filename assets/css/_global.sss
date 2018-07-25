@@ -71,7 +71,7 @@ header
     font-size: 20px
 
     order: 3
-    flex: 0 1 330px
+    flex: 0 1 350px
     align-self: auto
 
     & span
@@ -210,12 +210,11 @@ label
         &:hover
           text-decoration: underline
 
-#stories
-  & .header
-    & a
-      float: right
-      margin-top: 5px
-      display: inline-block
+.headerLink
+  & a
+    float: right
+    margin-top: 5px
+    display: inline-block
 
 input.search
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .05)
@@ -387,8 +386,9 @@ input.search
       border-left: 2px solid #bbb
 
     & .via 
-      color: #bbbbbb
-      font-size: 12px
+      & a
+        color: #bbbbbb
+        font-size: 12px
 
       & button
         border: 1px solid #eee

@@ -1,0 +1,32 @@
+extends(src='layout.sgr')
+  block(name='content')
+
+    section#homegrid
+      div#galleries(class='galleries_box')
+        h2 Destinations
+        input(class="search" placeholder="Search Galleries")
+        
+        ul#gal_display.searchable
+          each(loop='city of contentful.cities')
+              li: h4 {{city.cityName}} 
+                ul
+                  each(loop='museum of contentful.museums')
+                    if(condition="museum.city.fields.slug==city.slug")
+                      li
+                        a(href='/museum/{{museum.slug}}' class='podLink')
+                          .pod
+                            .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
+                            div
+                              span(class='museumName') {{museum.name}}
+        ul#gal_search(class="list hidden")
+          each(loop='museum of contentful.museums')
+            li
+              a(href='/museum/{{museum.slug}}' class='podLink')
+                .pod
+                  .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
+                  div(class='museumLabel')
+                    span(class='museum_name') {{museum.name}}
+                    span(class='cityCountry') {{museum.city.fields.cityName}}, {{museum.city.fields.country}}
+
+        
+     

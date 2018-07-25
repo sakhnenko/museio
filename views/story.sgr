@@ -7,8 +7,6 @@ extends(src='layout.sgr')
                 p.byline
                     span by
                     a(href={{item.storyLink}}) {{item.storyAuthor}} 
-                    span.at at 
-                    a(href={{item.storyLink}} , class='storylink') {{item.storyLink}}
                 hr
             h4 Listen to the Story:
             if(condition="item.audioEmbed!=undefined")
@@ -22,9 +20,10 @@ extends(src='layout.sgr')
                     button#readit Read Me a Story, MUSE!
                     button#stopit Shut Up, please...
                 
-            p.storyText#readme(md) {{item.story}}
+            div.storyText
+                p#readme(md) {{item.story}}
             p.via
-                a(href={{item.storyLink}}) Via
+                a(href={{item.storyLink}}) Via {{item.storyLink}}
         .storySpacer
         .storyInfobar
                 .art_image(style="background-image:url({{item.photo.fields.file.url}}?w=500)")

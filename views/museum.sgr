@@ -12,6 +12,5 @@ extends(src='layout.sgr')
                       .pod.squared
                           .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
                           span {{piece.fields.title}}
-
+                  
                           
-
