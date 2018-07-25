@@ -7,14 +7,15 @@ extends(src='layout.sgr')
             if(condition="feature.fields.title=='homepage'")
               each(loop='story of feature.fields.feature')
                 div(class='slide')
-                  div.featureContainer(style='background-image:url({{story.fields.photo.fields.file.url}}?w=500)')
+                  div.featureContainer
                     a(href=/story/{{story.fields.slug}}) {{story.fields.title}}
-
+                    img(src='{{story.fields.photo.fields.file.url}}?w=500')
+                    div 
 
     section#homegrid
       div#galleries(class='galleries_box')
         div.headerLink
-          a(href='/galleries') All Galleries
+          a(href='/galleries') All {{contentful.museums.length}} Galleries
           h2 Featured Destinations
         ul(class='list')
           each(loop='city of contentful.cities')
@@ -29,10 +30,10 @@ extends(src='layout.sgr')
                             .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
                             div
                               span(class='museumName') {{museum.name}}
-        a(href='/galleries') View All Galleries
+        a(href='/galleries') View All {{contentful.museums.length}} Galleries
       div#stories(class='stories_box')
         div.headerLink
-          a(href='/stories') All Stories
+          a(href='/stories') All {{contentful.pieces.length}} Stories
           h2 Recent Additions
         ul(class='list')
           each(loop='piece of contentful.recentstories')
@@ -41,6 +42,6 @@ extends(src='layout.sgr')
                 .pod.squared
                   .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
                   span(class='story_title') {{piece.title}}
-        a(href='/stories' ) View All Stories
+        a(href='/stories' ) View All {{contentful.pieces.length}} Stories
               
                   

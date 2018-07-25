@@ -1,16 +1,41 @@
 extends(src='layout.sgr')
   block(name='content')
     .paddingBig
-      h1 {{item.name}}
+      .museumHeader
+        .visualMuseum
+          div#map
+          div#musephoto(style='background-image: url({{item.image.fields.file.url}}?w=200)')
+        h1 {{item.name}}
+        div.address {{item.address}}
+        script.
+          function initMap() {
+            var latlon = {{JSON.stringify(item.location)}}
+            var musepos = {lat: latlon.lat, lng: latlon.lon}
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: musepos,
+              draggable: false, 
+              zoomControl: false, 
+              scrollwheel: false,
+              disableDefaultUI: true
+            });
+            var marker = new google.maps.Marker({position: musepos, map: map});
+            map.addListener('click', function() {
+              window.open(
+                'https://www.google.com/maps/search/?api=1&query={{item.address}}',
+                '_blank'
+              );
+            });
+          }
       h2 Stories
-          ul
-            each(loop='location of contentful.location')
-              if(condition="location.museum.fields.slug==item.slug")
-                each(loop='piece of location.stories')
-                  li
-                    a(href='/story/{{piece.fields.slug}}', class='podLink')
-                      .pod.squared
-                          .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
-                          span {{piece.fields.title}}
+      ul
+        each(loop='location of contentful.location')
+          if(condition="location.museum.fields.slug==item.slug")
+            each(loop='piece of location.stories')
+              li
+                a(href='/story/{{piece.fields.slug}}', class='podLink')
+                  .pod.squared
+                      .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
+                      span {{piece.fields.title}}
                   
                           

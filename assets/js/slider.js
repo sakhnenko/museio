@@ -24,6 +24,14 @@ if (document.getElementById("features")!=null){
             1000: {
               items: 3,
               gutter: 6
+            },
+            1500: {
+              items: 4,
+              gutter: 6
+            },
+            2000: {
+              items: 5,
+              gutter: 6
             }
           }
       });

@@ -94,7 +94,7 @@ module.exports = {
           },
           filters: {
             order: '-sys.updatedAt',
-            limit: 31
+            limit: 33
           }
         },
         {

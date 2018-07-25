@@ -193,7 +193,27 @@ label
     padding-bottom: 6px
     & div.featureContainer
       height: 300px
-      background-size: cover
+      margin-bottom: 6px
+      position: relative
+      overflow: hidden
+      & div
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        z-index: 21
+        background: transparent
+        background: linear-gradient(to right, #009FFF, #ec2F4B)
+        opacity: 0.3
+        transition: opacity .5s ease-out
+        &:hover
+          opacity: 0
+      & img
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 20
       & a
         color: White
         background: rgba(0,0,0,0.6)
@@ -204,8 +224,10 @@ label
         display: inline-block
         margin: 20px
         text-decoration: none
-        position: relative
-        bottom: 0
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 22
 
         &:hover
           text-decoration: underline
@@ -264,6 +286,31 @@ input.search
     border-radius: 8px
     & .thumbnail
       border-radius: 8px
+
+.museumHeader
+  min-height: 100px
+  margin-bottom: 40px
+  border-bottom: 1px solid #eee
+  padding-bottom: 20px
+  & h1
+    padding-top: 10px
+  & .address
+    color: #aaa
+  & .visualMuseum
+    width: 400px
+    float: right
+    & #map
+      width: 300px
+      height: 100px
+      background-color: #eee
+      float: right
+      cursor: pointer !important
+    & #musephoto
+      width: 100px
+      height: 100px
+      background-size: cover
+      float: right
+      background-position: center
 
 .bigpod 
   display: grid
@@ -337,10 +384,10 @@ input.search
     font-weight: 600
 
 .byline
-  color: Black
+  color: #aaa
   display: block
   & a 
-    color: #000
+    color: #999
     font-weight: bold
   & .at 
     color: #ccc
