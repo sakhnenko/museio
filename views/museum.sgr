@@ -1,4 +1,6 @@
 extends(src='layout.sgr')
+  block(name='title')
+    title Museio | {{item.name}}
   block(name='content')
     .paddingBig
       .museumHeader

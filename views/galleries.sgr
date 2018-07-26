@@ -1,6 +1,7 @@
 extends(src='layout.sgr')
+  block(name='title')
+    title Museio | All Galleries & Museums
   block(name='content')
-
     section.paddingBig
       div#galleries
         h2 All Destinations

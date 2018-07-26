@@ -1,4 +1,6 @@
 extends(src='layout.sgr')
+    block(name='title')
+    title Museio | About Our Project
   block(name='content')
     section#aboutus
         h1 About Museio.org

@@ -1,4 +1,6 @@
 extends(src='layout.sgr')
+block(name='title')
+    title Museio | {{item.title}}
   block(name='content')
     section#storygrid(class=story)
         .details

@@ -1,4 +1,6 @@
 extends(src='layout.sgr')
+  block(name='title')
+    title Museio | All Stories
   block(name='content')
     #stories.paddingBig
       h2 All Stories
