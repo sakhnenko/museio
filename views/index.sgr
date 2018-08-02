@@ -43,7 +43,10 @@ block(name='title')
               a(href='/story/{{piece.slug}}' class='podLink')
                 .pod.squared
                   .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
-                  span(class='story_title') {{piece.title}}
+                  div
+                    span(class='story_title') {{piece.title}}
+                    if(condition="piece.duration!=undefined")
+                      span(class='story_time') {{piece.duration}}m
         a(href='/stories' ) View All {{contentful.pieces.length}} Stories
               
                   

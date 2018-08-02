@@ -10,7 +10,10 @@ block(name='title')
                     span by
                     a(href={{item.storyLink}}) {{item.storyAuthor}} 
                 hr
-            h4 Listen to the Story:
+            h4
+                span Listen to the Story:
+                if(condition="item.duration!=undefined")
+                    span(class='story_time') {{item.duration}} minutes
             if(condition="item.audioEmbed!=undefined")
                 div {{item.audioEmbed}}
             elseif(condition="item.audio!=undefined")

@@ -12,7 +12,10 @@ extends(src='layout.sgr')
                 .bigpod
                   .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
                   .poddetail
-                    div(class='story_title') {{piece.title}}
+                    div(class='story_title') 
+                      span {{piece.title}}
+                      if(condition="piece.duration!=undefined")
+                        span(class='story_time') {{piece.duration}}m
                     if(condition="piece.relatedArt!=undefined")
                       div.miniRelated
                         img(src='img/art.svg', width='16px')
