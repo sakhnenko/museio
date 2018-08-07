@@ -36,17 +36,18 @@ block(name='title')
       div#stories(class='stories_box')
         div.headerLink
           a(href='/stories') All {{contentful.pieces.length}} Stories
-          h2 Recent Additions
+          h2 Recent Features
         ul(class='list')
           each(loop='piece of contentful.recentstories')
-            li
-              a(href='/story/{{piece.slug}}' class='podLink')
-                .pod.squared
-                  .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
-                  div
-                    span(class='story_title') {{piece.title}}
-                    if(condition="piece.duration!=undefined")
-                      span(class='story_time') {{piece.duration}}m
+            if(condition="piece!=null")
+              li 
+                a(href='/story/{{piece.slug}}' class='podLink')
+                  .pod.squared
+                    .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
+                    div
+                      span(class='story_title') {{piece.title}}
+                      if(condition="piece.duration!=undefined")
+                        span(class='story_time') {{piece.duration}}m
         a(href='/stories' ) View All {{contentful.pieces.length}} Stories
               
                   

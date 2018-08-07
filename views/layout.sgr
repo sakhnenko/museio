@@ -28,7 +28,7 @@ html
   body
     header
       div(id='logo')
-        a(href=/) museio
+        a(href=/) Museio
       div(id='motto')
         span Art Stories to Listen Inside Galleries
       div(id='menu')

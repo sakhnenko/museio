@@ -90,7 +90,13 @@ module.exports = {
           name: 'recentstories',
           id: 'piece',
           transform: (piece) => {
-            return piece.fields
+            console.log(piece.fields.slug)
+             if(piece.fields.featured){
+               console.log("T")
+              return piece.fields
+            }else{
+              return null
+            }
           },
           filters: {
             order: '-sys.updatedAt',
