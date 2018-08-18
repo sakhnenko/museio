@@ -76,7 +76,8 @@ module.exports = {
           name: 'pieces',
           id: 'piece',
           filters: {
-            limit: 1000
+            limit: 1000,
+            order: '-sys.updatedAt',
           },
           transform: (piece) => {
             return piece.fields
@@ -90,9 +91,7 @@ module.exports = {
           name: 'recentstories',
           id: 'piece',
           transform: (piece) => {
-            console.log(piece.fields.slug)
              if(piece.fields.featured){
-               console.log("T")
               return piece.fields
             }else{
               return null
