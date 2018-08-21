@@ -99,7 +99,7 @@ module.exports = {
           },
           filters: {
             order: '-sys.updatedAt',
-            limit: 33
+            limit: 60
           }
         },
         {
