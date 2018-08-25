@@ -44,7 +44,7 @@ extends(src='layout.sgr')
               li
                 a(href='/story/{{piece.fields.slug}}', class='podLink')
                   .pod.squared
-                      .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=100)')
+                      .thumbnail(style='background-image:url({{piece.fields.photo.fields.file.url}}?w=70&h=70&fit=thumb&q=50)')
                       div
                         span {{piece.fields.title}}
                         if(condition="piece.fields.duration!=undefined")

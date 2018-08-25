@@ -10,7 +10,7 @@ extends(src='layout.sgr')
             li
               a(href='/story/{{piece.slug}}'} class='podLink')
                 .bigpod
-                  .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
+                  .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=120&h=120&fit=thumb&q=50)')
                   .poddetail
                     div(class='story_title') 
                       span {{piece.title}}

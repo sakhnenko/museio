@@ -29,7 +29,7 @@ block(name='title')
                       li
                         a(href='/museum/{{museum.slug}}' class='podLink')
                           .pod
-                            .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
+                            .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=70&h=70&fit=thumb&q=50)')
                             div
                               span(class='museumName') {{museum.name}}
         a(href='/galleries') View All {{contentful.museums.length}} Galleries
@@ -43,7 +43,7 @@ block(name='title')
               li 
                 a(href='/story/{{piece.slug}}' class='podLink')
                   .pod.squared
-                    .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=100)')
+                    .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=70&h=70&fit=thumb&q=50)')
                     div
                       span(class='story_title') {{piece.title}}
                       if(condition="piece.duration!=undefined")

@@ -52,7 +52,7 @@ block(name='title')
                             each(loop='art of item.relatedArt')
                                 div.artCard
                                     if(condition="art.fields.photo!=undefined")
-                                    .related_thumbnail(style='background-image: url({{art.fields.photo.fields.file.url}}?w=200)') 
+                                    .related_thumbnail(style='background-image: url({{art.fields.photo.fields.file.url}}?w=130&h=130&fit=thumb&q=50)') 
                                     p.artTitle "{{art.fields.title}}"
                                     p.artByline {{art.fields.artist}}
         
