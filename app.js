@@ -65,7 +65,8 @@ module.exports = {
             return museum.fields
           },
           filters: {
-            order: 'fields.slug'
+            order: 'fields.slug',
+            limit: 1000
           },
           template: {
             path: 'views/museum.sgr',
