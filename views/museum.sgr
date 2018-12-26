@@ -9,7 +9,7 @@ extends(src='layout.sgr')
           div#musephoto(style='background-image: url({{item.image.fields.file.url}}?w=200)')
         h1 {{item.name}}
         div.address {{item.address}}
-        script(defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyClEuxsgt8ANv4njLy8ok6qIfKvTk9P8Y8&callback=initMap')
+        script(defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCIL8zqoYOmMVZN1bAH-TmWAujAXb2J0eE&callback=initMap')
         script.
           function initMap(){
             var latlon = {{JSON.stringify(item.location)}}
