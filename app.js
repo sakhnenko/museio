@@ -4,7 +4,6 @@ const jsStandards = require('spike-js-standards')
 const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const lost = require('lost')
-const tipsy = require('postcss-tipsy')
 const animation = require('postcss-animation')
 const env = process.env.SPIKE_ENV
 const Contentful = require('spike-contentful')
@@ -20,7 +19,7 @@ const newLocal = 'data.json';
 module.exports = {
   devtool: 'source-map',
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock', 'package-lock.json'],
+  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock', 'npm-strinkwrap.json'],
   reshape: htmlStandards({
     parser: sugarml,
     locals: (ctx) => locals,
@@ -31,7 +30,7 @@ module.exports = {
     parser: sugarss,
     minify: env === 'production',
     warnForDuplicates: env !== 'production',
-    appendPlugins: [lost(), tipsy(), animation()]
+    appendPlugins: [lost(), animation()]
   }),
   babel: jsStandards(),
   plugins: [

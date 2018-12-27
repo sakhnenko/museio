@@ -15,7 +15,14 @@ block(name='title')
                 if(condition="item.duration!=undefined")
                     span(class='story_time') {{item.duration}} minutes
             if(condition="item.audioEmbed!=undefined")
-                div {{item.audioEmbed}}
+                div#embedded
+                script.
+                    var txt = document.createElement("textarea")
+                    txt.innerHTML = "{{item.audioEmbed}}"
+                    eCode = txt.value
+
+                    var e = document.getElementById('embedded')
+                    e.innerHTML = eCode
             elseif(condition="item.audio!=undefined")
                 audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
             else
