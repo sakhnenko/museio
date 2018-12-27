@@ -64,6 +64,7 @@ module.exports = {
             return museum.fields
           },
           filters: {
+            limit: 1000,
             order: 'fields.slug'
           },
           template: {

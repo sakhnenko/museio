@@ -4,7 +4,7 @@ extends(src='layout.sgr')
   block(name='content')
     #stories.paddingBig
       h2 All Stories
-        input(class="search" placeholder="&#x1f50d; Search Stories, Art, Artists &amp; Galleries")
+        input(class="search" placeholder="🔎 Search stories, art, artists, galleries")
         ul(class='list searchable')
           each(loop='piece of contentful.pieces')
             li

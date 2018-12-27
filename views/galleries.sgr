@@ -5,7 +5,7 @@ extends(src='layout.sgr')
     section.paddingBig
       div#galleries
         h2 All Destinations
-        input(class="search" placeholder="&#x1f50d; Search galleries, cities, countries")
+        input(class="search" placeholder="🔎 Search galleries, cities, countries")
         br
         ul#gal_display
           each(loop='city of contentful.cities')
