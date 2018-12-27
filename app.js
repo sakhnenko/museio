@@ -52,7 +52,7 @@ module.exports = {
         },
         {
           name: 'allcities',
-          id: 'city',
+          id: 'city'
         },
         {
           name: 'features',
