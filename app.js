@@ -77,7 +77,7 @@ module.exports = {
           id: 'piece',
           filters: {
             limit: 1000,
-            order: '-sys.updatedAt',
+            order: '-sys.updatedAt'
           },
           transform: (piece) => {
             return piece.fields
