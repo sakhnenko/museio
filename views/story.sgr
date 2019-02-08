@@ -16,15 +16,19 @@ block(name='title')
                     span(class='story_time') {{item.duration}} minutes
             if(condition="item.audioEmbed!=undefined")
                 div#embedded {{{item.audioEmbed}}}
-            elseif(condition="item.audio!=undefined")
+            if(condition="item.audio!=undefined")
+                h4
+                    span Audio-only:
+                    span(class='story_time') (best on mobile)
                 audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
-            else
-                .botBox
-                    #museAI
-                    p Hi! I'm MUSE... a bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
-                    button#readit Read Me a Story, MUSE!
-                    button#stopit Shut Up, please...
-                
+            //- else
+            //-     .botBox
+            //-         #museAI
+            //-         p Hi! I'm MUSE... a bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
+            //-         button#readit Read Me a Story, MUSE!
+            //-         button#stopit Shut Up, please...
+            h4
+                span Description:     
             div.storyText
                 p#readme(md) {{item.story}}
             p.via
