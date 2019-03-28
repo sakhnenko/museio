@@ -20,15 +20,14 @@ html
       gtag('js', new Date());
       gtag('config', 'UA-117427131-1');
 
-    
   body
     header
       div
         div(id='logo')
-          a(href=/)
+          a(href=/ data-text="MUSE IO")
             span Muse
             span.last2 io
-        div.motto Your Art Gallery Companion
+        div.motto Your Art Gallery Companion 
       div(id='menu')
         a(href="/about" ) About
         a(href="/galleries" ) Galleries
