@@ -91,7 +91,7 @@ module.exports = {
           name: 'recentstories',
           id: 'piece',
           transform: (piece) => {
-             if(piece.fields.featured){
+             if(piece.fields.featured==true){
               return piece.fields
             }else{
               return null
