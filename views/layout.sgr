@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta(http-equiv='Content-Type"' content='text/html' charset='utf-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')npm
     meta(name='description' content='')
     meta(name='author' content='sakhnenko')
     meta(name='viewport' content='width=device-width, initial-scale=1')
@@ -23,15 +23,16 @@ html
     
   body
     header
-      div(id='logo')
-        a(href=/) Museio
-      div(id='motto')
-        span Art Stories to Listen Inside Galleries
+      div
+        div(id='logo')
+          a(href=/)
+            span Muse
+            span.last2 io
+        div.motto Your Art Gallery Companion
       div(id='menu')
         a(href="/about" ) About
         a(href="/galleries" ) Galleries
         a(href="/stories" ) Stories
-        a(href="/submit" ) Suggest
 
     main(role='main' id='content' class='nonothing')
       block(name='content')

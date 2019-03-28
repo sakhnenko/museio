@@ -27,64 +27,52 @@ ul.podGroup
     margin-right: 2%
 
 header
-  background: White
+  background: #d63f80
   border-bottom: 1px solid #ccc
   z-index: 10
   align-items: center
-
   display: flex
   flex-direction: row
   flex-wrap: nowrap
   justify-content: center
   align-content: stretch
-  align-items: center
 
   & #logo
-    padding: 10px
+    padding: 0 10px
     margin-left: 10px
-    padding-top: 6px
-    padding-bottom: 6px
-    font-size: 50px
-    font-weight: 100
+    font-size: 60px
+    font-weight: 700
+    text-transform: uppercase
     font-family: 'MuseoCyrillicWeb500', 'Roboto Slab', serif
     display: inline-block
-    color: #000
+    color: #fff
     order: 1
-    flex: 0 1 200px
     align-self: auto
 
-    &::first-letter
-      color: #d63f80
-
     & a
-      color: Black
+      color: White
       text-decoration: none
 
       &:hover
         text-decoration: underline
 
-  & #motto
-    font-size: 20px
-    font-weight: 300
-    text-transform: capitalize
-    text-align: center
-    order: 2
-    flex: 1 1 auto
-    align-self: auto
+      & .last2
+        color: rgba(255, 255, 255, 0.7)
 
-    & span
-      color: #aaa
-      position: relative
-      top: -1px
-      margin-right: 30px
+  & .motto
+    color: White
+    padding-bottom: 6px
+    padding-left: 19px
+    font-size: 21px
+    font-weight: 200
+    position: relative
+    top: -5px
 
   & #menu
     font-size: 20px
-
-    order: 3
-    flex: 0 1 350px
+    order: 2
     align-self: auto
-
+    margin-left: auto
     & span
       font-weight: 300
       margin-right: 40px
@@ -93,10 +81,10 @@ header
       margin-right: 15px
       text-decoration: none
       font-weight: 600
-      border-bottom: 3px solid #ddd
-      color: Black
+      border-bottom: 3px transparent #ddd
+      color: White
       &:hover
-        border-color: #d63f80
+        border-color: White
         color: black
 
 #homegrid
