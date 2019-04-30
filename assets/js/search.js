@@ -15,11 +15,11 @@ if (document.getElementsByClassName("searchable")[0]!=null){
     var galleryList = new List('galleries', options2);
     galleryList.on("updated", function(list){
         if (list.searched == true) {
-            document.getElementById("gal_display").style.display = 'none'
-            document.getElementById("gal_search").style.display = 'flex'
+            document.getElementById("gal_display").style.display = 'none !important'
+            document.getElementById("gal_search").style.display = 'flex !important'
           } else {
-            document.getElementById("gal_display").style.display = 'flex'
-            document.getElementById("gal_search").style.display = 'none'
+            document.getElementById("gal_display").style.display = 'flex !important'
+            document.getElementById("gal_search").style.display = 'none !important'
           }
     })
 
