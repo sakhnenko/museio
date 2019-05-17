@@ -5,7 +5,11 @@ const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const lost = require('lost')
 const animation = require('postcss-animation')
-const env = process.env.SPIKE_ENV
+
+const env = require('env2')('./.env')
+const contentful_token = process.env.ACCESS_TOKEN
+const contentful_spaceid = process.env.SPACE_ID
+
 const Contentful = require('spike-contentful')
 
 const locals = {}
@@ -36,8 +40,8 @@ module.exports = {
   plugins: [
     new Contentful({
       addDataTo: locals,
-      accessToken: '480640bb178b9eb1632c2730e0b37dfd46aee289385c8852592e63a779470a07',
-      spaceId: '543uoj65nye4',
+      accessToken: contentful_token,
+      spaceId: contentful_spaceid,
       contentTypes: [
         {
           name: 'cities',
