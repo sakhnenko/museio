@@ -22,7 +22,7 @@ extends(src='layout.sgr')
                             .thumbnail(style='background-image:url({{museum.image.fields.file.url}}?w=100)')
                             div
                               span(class='museumName') {{museum.name}}
-        ul#gal_search(class="list hidden searchable podGroup")
+        ul#gal_search(class="list searchable podGroup")
           each(loop='museum of contentful.museums')
             li
               a(href='/museum/{{museum.slug}}' class='podLink')
