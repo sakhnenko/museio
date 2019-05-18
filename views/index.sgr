@@ -14,6 +14,11 @@ block(name='title')
                     img(src='{{story.fields.photo.fields.file.url}}?w=500')
                     div 
 
+    section#aboutquote
+      div 
+        p.first Museio is a project to collect audio and video stories about art, narrated by experts and fans around the world. 
+        p.second Next time you're in an art gallery, take Museio with you to discover the stories behind your favourite artworks.
+ 
     section#homegrid
       div#galleries(class='galleries_box')
         div.headerLink
@@ -36,7 +41,7 @@ block(name='title')
       div#stories(class='stories_box')
         div.headerLink
           a(href='/stories') All {{contentful.pieces.length}} Stories
-          h2 Recent Features
+          h2 Featured Stories
         ul(class='list')
           each(loop='piece of contentful.recentstories')
             if(condition="piece!=null")
