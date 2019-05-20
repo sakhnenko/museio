@@ -16,8 +16,8 @@ block(name='title')
 
     section#aboutquote
       div 
-        p.first Museio is a project to collect audio and video stories about art, narrated by experts and fans around the world. 
-        p.second Next time you're in an art gallery, take Museio with you to discover the stories behind your favourite artworks.
+        p.first Museio is a project to collect audio and video stories about art 
+        p.second Next time you're in an art gallery, take Museio with you to discover the stories behind your favourite artworks, narrated by experts and fans around the world
  
     section#homegrid
       div#galleries(class='galleries_box')
