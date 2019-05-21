@@ -6,6 +6,7 @@ html
     meta(name='description' content='')
     meta(name='author' content='sakhnenko')
     meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='twitter:card' content='summary_large_image')
 
     block(name='title')
     
