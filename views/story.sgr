@@ -3,7 +3,7 @@ extends(src='layout.sgr')
         meta(property='og:url' content='https://www.museio.org/story/{{item.slug}}')
         meta(property='og:title' content='{{item.title}}')
         meta(property='og:description' content='{{item.story}}')
-        meta(property='og:image' content='{{item.photo.fields.file.url}}')
+        meta(property='og:image' content='{{item.photo.fields.file.url}}?w=500')
     block(name='title')
         title Museio | {{item.title}}
     block(name='content')
