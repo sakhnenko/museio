@@ -1,62 +1,67 @@
 extends(src='layout.sgr')
-block(name='title')
-    title Museio | {{item.title}}
-  block(name='content')
-    section#storygrid(class=story)
-        .details
-            div.storyTitle
-                h1 {{item.title}}
-                p.byline
-                    span by
-                    a(href={{item.storyLink}}) {{item.storyAuthor}} 
-                hr
-            h4
-                span Listen to the Story:
-                if(condition="item.duration!=undefined")
-                    span(class='story_time') {{item.duration}} minutes
-            if(condition="item.audioEmbed!=undefined")
-                div#embedded {{{item.audioEmbed}}}
-            if(condition="item.audio!=undefined")
+    block(name='story_card')
+        meta(property='og:url' content='https://www.museio.org/story/{{item.slug}}')
+        meta(property='og:title' content='{{item.title}}')
+        meta(property='og:description' content='{{item.story}}')
+        meta(property='og:image' content='{{item.photo.fields.file.url}}')
+    block(name='title')
+        title Museio | {{item.title}}
+    block(name='content')
+        section#storygrid(class=story)
+            .details
+                div.storyTitle
+                    h1 {{item.title}}
+                    p.byline
+                        span by
+                        a(href={{item.storyLink}}) {{item.storyAuthor}} 
+                    hr
                 h4
-                    span Audio-only:
-                    span(class='story_time') (best on mobile)
-                audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
-            //- else
-            //-     .botBox
-            //-         #museAI
-            //-         p Hi! I'm MUSE... a bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
-            //-         button#readit Read Me a Story, MUSE!
-            //-         button#stopit Shut Up, please...
-            h4
-                span Description:     
-            div.storyText
-                p#readme(md) {{item.story}}
-            p.via
-                a(href={{item.storyLink}}) Via {{item.storyLink}}
-        .storySpacer
-        .storyInfobar
-                .art_image(style="background-image:url({{item.photo.fields.file.url}}?w=500)")
+                    span Listen to the Story:
+                    if(condition="item.duration!=undefined")
+                        span(class='story_time') {{item.duration}} minutes
+                if(condition="item.audioEmbed!=undefined")
+                    div#embedded {{{item.audioEmbed}}}
+                if(condition="item.audio!=undefined")
+                    h4
+                        span Audio-only:
+                        span(class='story_time') (best on mobile)
+                    audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
+                //- else
+                //-     .botBox
+                //-         #museAI
+                //-         p Hi! I'm MUSE... a bot that takes care of a few things around here... There's no audio that goes along with this story, but I can try to read it for you, if you wish! I'm a little dum-dum though, so sorry in advance :(
+                //-         button#readit Read Me a Story, MUSE!
+                //-         button#stopit Shut Up, please...
+                h4
+                    span Description:     
+                div.storyText
+                    p#readme(md) {{item.story}}
+                p.via
+                    a(href={{item.storyLink}}) Via {{item.storyLink}}
+            .storySpacer
+            .storyInfobar
+                    .art_image(style="background-image:url({{item.photo.fields.file.url}}?w=500)")
 
-                div.locations
-                    label Best experienced at
-                        each(loop='location of contentful.location')
-                            .locationItem
-                                each(loop='story of location.stories')
-                                    if(condition="story.fields.slug==item.slug")
-                                        .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
-                                        if(condition="location.locationLink==undefined")
-                                            p {{location.location}}
-                                        else
-                                            .locationLink
-                                                a(href={{location.locationLink}}) {{location.location}}
-                
-                if(condition="item.relatedArt!=undefined")
-                    div.relatedArt
-                        label Related Art
-                            each(loop='art of item.relatedArt')
-                                div.artCard
-                                    if(condition="art.fields.photo!=undefined")
-                                    .related_thumbnail(style='background-image: url({{art.fields.photo.fields.file.url}}?w=130&h=130&fit=thumb&q=50)') 
-                                    p.artTitle "{{art.fields.title}}"
-                                    p.artByline {{art.fields.artist}}
-        
+                    div.locations
+                        label Best experienced at
+                            each(loop='location of contentful.location')
+                                .locationItem
+                                    each(loop='story of location.stories')
+                                        if(condition="story.fields.slug==item.slug")
+                                            .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
+                                            if(condition="location.locationLink==undefined")
+                                                p {{location.location}}
+                                            else
+                                                .locationLink
+                                                    a(href={{location.locationLink}}) {{location.location}}
+                    
+                    if(condition="item.relatedArt!=undefined")
+                        div.relatedArt
+                            label Related Art
+                                each(loop='art of item.relatedArt')
+                                    div.artCard
+                                        if(condition="art.fields.photo!=undefined")
+                                        .related_thumbnail(style='background-image: url({{art.fields.photo.fields.file.url}}?w=130&h=130&fit=thumb&q=50)') 
+                                        p.artTitle "{{art.fields.title}}"
+                                        p.artByline {{art.fields.artist}}
+            
