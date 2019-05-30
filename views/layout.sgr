@@ -38,6 +38,11 @@ html
 
     main(role='main' id='content' class='nonothing')
       block(name='content')
-
+      
+    footer
+      div(id='final')
+        a(href='mailto:contact@museio.org') contact@museio.org
+        a(href="http://www.twitter.com/museio" ) http://www.twitter.com/museio
+        
     block(name='javascript')
       script(src='/js/main.js' defer)

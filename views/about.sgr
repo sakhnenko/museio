@@ -4,6 +4,10 @@ extends(src='layout.sgr')
   block(name='content')
     section#aboutus
         h1 About Museio.org
+            p
+                | Let's talk at 
+                a(href='mailto:contact@museio.org') contact@museio.org
+
         h2 Collection of audio stories to enjoy inside art galleries
 
         p
