@@ -19,13 +19,14 @@ extends(src='layout.sgr')
                     span Listen to the Story:
                     if(condition="item.duration!=undefined")
                         span(class='story_time') {{item.duration}} minutes
+                if(condition="item.audio!=undefined")
+                    div#audioOnly
+                        h4
+                            span Audio-only:
+                            span(class='subtitle') (best on mobile)
+                        audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
                 if(condition="item.audioEmbed!=undefined")
                     div#embedded {{{item.audioEmbed}}}
-                if(condition="item.audio!=undefined")
-                    h4
-                        span Audio-only:
-                        span(class='story_time') (best on mobile)
-                    audio#player(controls="true", src="{{item.audio.fields.file.url}}", type="audio/mp3")
                 //- else
                 //-     .botBox
                 //-         #museAI
