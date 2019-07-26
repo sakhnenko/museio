@@ -169,7 +169,11 @@ footer
     font-size: 12px
 
 header
-  background: #d63f80
+  /* background: #d63f80 */
+  background: #EECDA3  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EF629F, #EECDA3)  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EF629F, #EECDA3) /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   z-index: 10
   align-items: center
   display: flex

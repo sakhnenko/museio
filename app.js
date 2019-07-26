@@ -103,7 +103,7 @@ module.exports = {
           },
           filters: {
             order: '-sys.updatedAt',
-            limit: 110
+            limit: 40
           }
         },
         {
