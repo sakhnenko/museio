@@ -58,11 +58,17 @@ extends(src='layout.sgr')
                     
                     if(condition="item.relatedArt!=undefined")
                         div.relatedArt
-                            label Related Art
+                            label Related Art & Stories
                                 each(loop='art of item.relatedArt')
                                     div.artCard
                                         if(condition="art.fields.photo!=undefined")
                                         .related_thumbnail(style='background-image: url({{art.fields.photo.fields.file.url}}?w=130&h=130&fit=thumb&q=50)') 
                                         p.artTitle "{{art.fields.title}}"
                                         p.artByline {{art.fields.artist}}
+                                        each(loop='related of contentful.pieces')
+                                            if(condition="related.relatedArt!=undefined")
+                                                each(loop='art2 of related.relatedArt')
+                                                    if(condition="art2.fields.title==art.fields.title")
+                                                        if(condition="related.slug!=item.slug")
+                                                            a(href='/story/{{related.slug}}'}) {{related.title}} 
             

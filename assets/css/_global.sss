@@ -268,7 +268,7 @@ header
   grid-column-gap: 1em
 
   & #audioOnly
-    display: flex
+    display: none
     flex-direction: row
     flex-wrap: nowrap
     justify-content: center
@@ -604,9 +604,19 @@ input.search
     margin-bottom: 5px
   & .artByline
     margin-top: 0px
+    margin-bottom: 5px
     font-size: 14px
     color: #666
     font-weight: 600
+  & a
+    font-size: 13px
+    text-decoration: underline
+    margin-bottom: 8px
+    margin-left: 115px
+    display: block
+    color: #aaa
+    &:hover
+      color: #444
 
 .byline
   color: #aaa

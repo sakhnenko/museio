@@ -8,7 +8,7 @@ extends(src='layout.sgr')
         ul(class='list searchable')
           each(loop='piece of contentful.pieces')
             li
-              a(href='/story/{{piece.slug}}'} class='podLink')
+              a(href='/story/{{piece.slug}}' class='podLink')
                 .bigpod
                   .thumbnail(style='background-image:url({{piece.photo.fields.file.url}}?w=120&h=120&fit=thumb&q=50)')
                   .poddetail
@@ -16,15 +16,19 @@ extends(src='layout.sgr')
                       span {{piece.title}}
                       if(condition="piece.duration!=undefined")
                         span(class='story_time') {{piece.duration}}m
+                    div.miniRelated
+                      img(src='img/person.svg' width='16px')
+                      span(class=artLoc) {{piece.storyAuthor}}
                     if(condition="piece.relatedArt!=undefined")
                       div.miniRelated
-                        img(src='img/art.svg', width='16px')
+                        img(src='img/art.svg' width='16px')
                         each(loop='art of piece.relatedArt')
                           span(class=artPiece) "{{art.fields.title}}" by {{art.fields.artist}}
                     div.miniRelated
-                      img(src='img/museum.svg', width='16px')
+                      img(src='img/museum.svg' width='16px')
                       each(loop='location of contentful.location')
                           each(loop='story of location.stories')
                             if(condition="story.fields.slug==piece.slug")
                               span(class=artLoc) {{location.museum.fields.name}}
+                    
                                 
