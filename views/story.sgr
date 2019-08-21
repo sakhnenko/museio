@@ -57,14 +57,14 @@ extends(src='layout.sgr')
                                                     a(href={{location.locationLink}}) {{location.location}}
                     
                     if(condition="item.relatedArt!=undefined")
-                        div.relatedArt
+                        div.locations
                             label Related Art & Stories
                                 each(loop='art of item.relatedArt')
                                     div.artCard
                                         if(condition="art.fields.photo!=undefined")
                                         .related_thumbnail(style='background-image: url({{art.fields.photo.fields.file.url}}?w=130&h=130&fit=thumb&q=50)') 
                                         p.artTitle "{{art.fields.title}}"
-                                        p.artByline {{art.fields.artist}}
+                                        p.artByline by {{art.fields.artist}}
                                         each(loop='related of contentful.pieces')
                                             if(condition="related.relatedArt!=undefined")
                                                 each(loop='art2 of related.relatedArt')
