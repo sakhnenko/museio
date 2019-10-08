@@ -69,6 +69,7 @@ extends(src='layout.sgr')
                                             if(condition="related.relatedArt!=undefined")
                                                 each(loop='art2 of related.relatedArt')
                                                     if(condition="art2.fields.title==art.fields.title")
-                                                        if(condition="related.slug!=item.slug")
-                                                            a(href='/story/{{related.slug}}'}) {{related.title}} 
+                                                        if(condition="art2.fields.artist==art.fields.artist")
+                                                            if(condition="related.slug!=item.slug")
+                                                                a(href='/story/{{related.slug}}'}) {{related.title}} 
             

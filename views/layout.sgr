@@ -39,7 +39,7 @@ html
         div(id='logo')
           a(href=/ data-text="Museio")
             span Museio
-        div.motto Your Art Gallery Companion 
+        div.motto Your Slow Art Companion 
       div(id='menu')
         a(href="/about" ) About
         a(href="/galleries" ) Galleries
