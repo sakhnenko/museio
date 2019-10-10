@@ -49,5 +49,9 @@ extends(src='layout.sgr')
                         span {{piece.fields.title}}
                         if(condition="piece.fields.duration!=undefined")
                           span(class='story_time') {{piece.fields.duration}}m
+                        div.miniRelated
+                          span(class=artLoc) {{piece.fields.storyAuthor}}
+                          if(condition="piece.fields.featured==true")
+                            img(src='/img/star.svg' width='12px')
                   
                           
