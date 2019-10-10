@@ -1,6 +1,6 @@
 extends(src='layout.sgr')
   block(name='title')
-      title Museio | Art Stories to Listen Inside Galleries
+      title Museio | Slow Art Stories to Listen Inside Galleries
 
   block(name='content')
     link(rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/tiny-slider.css")
