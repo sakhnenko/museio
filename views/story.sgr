@@ -12,7 +12,7 @@ extends(src='layout.sgr')
                 div.storyTitle
                     h1 {{item.title}}
                     p.byline
-                        span by
+                        span slow art story by
                         a(href={{item.storyLink}}) {{item.storyAuthor}} 
                     hr
                 h4
