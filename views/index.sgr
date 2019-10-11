@@ -14,13 +14,13 @@ extends(src='layout.sgr')
                     a(href=/story/{{story.fields.slug}}) {{story.fields.title}}
                     img(src='{{story.fields.photo.fields.file.url}}?w=500')
                     div 
+                    
 
     section#aboutquote
-      p.first Museio is a project to collect and share all recorded Slow Art stories
+      p.first Museio is a collection of recorded Slow Art stories 
       p.second
-        | Next time you're in an art gallery, pause for a moment, and use Museio to discover the stories behind the world's greatest artworks. 
+        | Next time you're in an art gallery, pause for a moment and use Museio to discover the stories behind the world's greatest artworks. 
         a(href='https://medium.com/museio/slower-art-8a0773ee60f9') 📖 Read the Slower Art Manifesto
-
 
     section#homegrid
       div#galleries(class='galleries_box')
