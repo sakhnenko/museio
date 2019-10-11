@@ -41,6 +41,8 @@ extends(src='layout.sgr')
                     a(href={{item.storyLink}}) Via {{item.storyLink}}
             .storySpacer
             .storyInfobar
+                    a(class=lightbox href='{{item.photo.fields.file.url}}'})
+                        img(src='/img/zoom-e.svg' width='16px')
                     .art_image(style="background-image:url({{item.photo.fields.file.url}}?w=500)")
 
                     div.locations
