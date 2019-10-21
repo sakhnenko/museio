@@ -27,6 +27,7 @@ extends(src='layout.sgr')
                     div.miniRelated
                       img(src='img/museum.svg' width='16px')
                       each(loop='location of contentful.location')
+                        if(condition='location.stories!=undefined')
                           each(loop='story of location.stories')
                             if(condition="story.fields.slug==piece.slug")
                               span(class=artLoc) {{location.museum.fields.name}}

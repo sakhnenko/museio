@@ -9,15 +9,15 @@
   "bugs": "https://github.com/sakhnenko/museio/issues",
   "dependencies": {
     "acorn": "^7.1.0",
-    "ajv": "^6.10.0",
-    "ajv-keywords": "^3.4.0",
+    "ajv": "^6.10.2",
+    "ajv-keywords": "^3.4.1",
     "artyom.js": "^1.0.6",
     "env2": "^2.2.2",
     "list.js": "^1.5.0",
     "lost": "^8.3.1",
     "luminous-lightbox": "^2.3.2",
     "postcss-animation": "0.0.12",
-    "postcss-nesting": "^7.0.0",
+    "postcss-nesting": "^7.0.1",
     "reshape-standard": "^3.3.0",
     "spike": "^2.3.0",
     "spike-contentful": "^3.1.1",
@@ -29,12 +29,12 @@
     "sugarml": "^0.7.0",
     "sugarss": "^2.0.0",
     "three": "^0.99.0",
-    "tiny-slider": "^2.9.1",
+    "tiny-slider": "^2.9.2",
     "wenk": "^1.0.8"
   },
   "devDependencies": {
     "ava": "^1.4.1",
-    "rimraf": "^2.6.3",
+    "rimraf": "^2.7.1",
     "snazzy": "^8.0.0",
     "standard": "^12.0.1"
   },

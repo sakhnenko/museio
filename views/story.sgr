@@ -49,25 +49,26 @@ extends(src='layout.sgr')
                         label Best experienced at
                             each(loop='location of contentful.location')
                                 .locationItem
-                                    each(loop='story of location.stories')
-                                        if(condition="story.fields.slug==item.slug")
-                                            if(condition="location.dateFrom==null")
-                                                .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
-                                                if(condition="location.locationLink==undefined")
-                                                    p {{location.location}}
-                                                else
-                                                    .locationLink
-                                                        a(href={{location.locationLink}}) {{location.location}}
-                                            else
-                                                if(condition="new Date(location.toDate) > new Date()")
+                                    if(condition='location.stories!=undefined')
+                                        each(loop='story of location.stories')
+                                            if(condition="story.fields.slug==item.slug")
+                                                if(condition="location.dateFrom==null")
                                                     .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
                                                     if(condition="location.locationLink==undefined")
                                                         p {{location.location}}
-                                                        p {{location.dateFrom}} to {{location.toDate}}
                                                     else
                                                         .locationLink
                                                             a(href={{location.locationLink}}) {{location.location}}
+                                                else
+                                                    if(condition="new Date(location.toDate) > new Date()")
+                                                        .museumName: a(href=/museum/{{location.museum.fields.slug}}) {{location.museum.fields.name}}
+                                                        if(condition="location.locationLink==undefined")
+                                                            p {{location.location}}
                                                             p {{location.dateFrom}} to {{location.toDate}}
+                                                        else
+                                                            .locationLink
+                                                                a(href={{location.locationLink}}) {{location.location}}
+                                                                p {{location.dateFrom}} to {{location.toDate}}
                     
                     if(condition="item.relatedArt!=undefined")
                         div.locations
