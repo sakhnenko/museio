@@ -12,8 +12,19 @@ extends(src='layout.sgr')
           div.address {{item.address}}
           script(defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCIL8zqoYOmMVZN1bAH-TmWAujAXb2J0eE&callback=initMap')
           script.
+            function parseJSONString(value) {   
+              try{
+                var convertedValue = value.replace(/&quot;/g,'"')
+                    .replace(/&#123;/g,'{')
+                    .replace(/&#125;/g,'}')
+                    .replace(/&#58;/g,':');
+                return JSON.parse(convertedValue);
+              }catch(e){
+                return null;
+              }
+              }
             function initMap(){
-              var latlon = {{JSON.stringify(item.location)}}
+              var latlon = parseJSONString('{{JSON.stringify(item.location)}}')
               var musepos = {lat: latlon.lat, lng: latlon.lon}
               var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 11,
