@@ -51,7 +51,7 @@ html
       
     footer
       div(id='final')
-        a(href='mailto:contact@museio.org') contact@museio.org
+        a(href='mailto:hi@museio.org') hi@museio.org
         a(href="http://www.twitter.com/museio" ) http://www.twitter.com/museio
         
     block(name='javascript')
