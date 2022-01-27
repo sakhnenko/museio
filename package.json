@@ -28,7 +28,7 @@
     "spike-records": "^2.2.1",
     "sugarml": "^0.7.0",
     "sugarss": "^2.0.0",
-    "three": "^0.99.0",
+    "three": "^0.137.0",
     "tiny-slider": "^2.9.2",
     "wenk": "^1.0.8"
   },
